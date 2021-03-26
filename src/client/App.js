@@ -1,12 +1,14 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import TestComponent from "./components/TestComponent/TestComponent";
+import React from "react"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import TestComponent from "./components/TestComponent/TestComponent"
+import HeaderComp from "./components/HeaderComp"
 
 function App() {
   return (
     <Router>
       <Route exact path="/">
-        <p>test</p>
+        <HeaderComp />
+        <p></p>
       </Route>
       <Route exact path="/lol">
         <p>lol</p>
@@ -15,7 +17,7 @@ function App() {
         <TestComponent></TestComponent>
       </Route>
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App
