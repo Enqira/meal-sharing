@@ -3,18 +3,19 @@
 * {
   font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 #root {
-  padding-left: 30%;
-  padding-right: 30%;
+  /* padding-left: 30%;
+  padding-right: 30%; */
   height: 100vh;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   font-size: 17px;
-  background-color: lightblue;
 }
 
 ul {
@@ -36,6 +37,34 @@ button {
   color: rgb(255, 255, 255);
   padding: 5px;
   font-size: 17px;
+}
+.header-component,
+.footer-component {
+  background-color: lightcoral;
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100vw;
+  align-items: center;
+}
+.header-component {
+  height: 100px;
+}
+.footer-component {
+  bottom: 0;
+}
+
+.menu {
+  display: inline-flex;
+}
+.menu li {
+  margin: 20px;
+}
+
+menu,
+.logo,
+.copyright,
+.footer-menu {
+  margin: 30px;
 }
 
 @media screen and (max-width: 1400px) {
