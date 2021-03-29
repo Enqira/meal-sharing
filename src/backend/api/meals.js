@@ -39,7 +39,7 @@ router.get("/", async (req, res) => {
       res.send(result)
     }
     // knex syntax for selecting things.
-    const meals = await knex("meals").select("title")
+    const meals = await knex("meals")
     res.json(meals)
   } catch (error) {
     throw error
