@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
 export default function HeaderComp() {
   return (
@@ -8,9 +9,9 @@ export default function HeaderComp() {
         <li>
           <a href="#home">Home</a>
         </li>
-        <li>
-          <a href="#news">News</a>
-        </li>
+        <Link to={"/meals"}>
+          <li>Meals</li>
+        </Link>
         <li>
           <a href="#contact">Contact</a>
         </li>

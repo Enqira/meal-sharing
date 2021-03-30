@@ -29,12 +29,13 @@ router.get("/:id", async (req, res) => {
 // 	Adds a new reservation
 router.post("/", async (req, res) => {
   try {
+    console.log(`this is the request ${req.body.id}`)
     const addreservation = await knex("reservations").insert({
-      number_of_guests: req.query.guests,
-      meal_id: req.query.meal_id,
-      contact_phonenumber: req.query.contact_phonenumber,
-      contact_name: req.query.contact_name,
-      contact_email: req.query.contact_email
+      number_of_guests: req.body.guests,
+      meal_id: req.body.id,
+      contact_phonenumber: req.body.phone,
+      contact_name: req.body.name,
+      contact_email: req.body.email
     })
     res.send("reservation added")
   } catch (error) {

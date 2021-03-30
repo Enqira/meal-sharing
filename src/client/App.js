@@ -7,13 +7,16 @@ import {
 } from "react-router-dom"
 import TestComponent from "./components/TestComponent/TestComponent"
 import HeaderComp from "./components/HeaderComp"
-import MainComp from "./components/MainComp"
+import TitleComp from "./components/TitleComp"
 import FooterComp from "./components/FooterComp"
 import MealComp from "./components/MealComp"
+import MealsComp from "./components/MealsComp"
+import MealFormComp from "./components/MealFormComp"
 
 function App() {
   const [meals, setMeals] = useState([])
   const [loading, setLoading] = useState(true)
+  const [formState, setFormState] = useState(true)
 
   useEffect(() => {
     fetch("http://localhost:5000/api/meals")
@@ -29,14 +32,16 @@ function App() {
       <Switch>
         <Route exact path="/">
           <HeaderComp />
-          <MainComp meals={meals} loading={loading} />
+          <TitleComp />
+          <MealsComp meals={meals} loading={loading} />
           <FooterComp />
         </Route>
         <Route exact path="/meals/:id">
-          <HeaderComp />
-
           {!loading ? <MealComp meals={meals} /> : <div>loading...</div>}
-          <FooterComp />
+        </Route>
+        <Route exact path="/meals">
+          <MealFormComp formState={formState} setFormState={setFormState} />
+          <MealsComp meals={meals} loading={loading} />
         </Route>
         <Route exact path="/test-component">
           <TestComponent></TestComponent>
