@@ -1,14 +1,17 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-@import 'theme.css';
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+@import "theme.css";
 * {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 #root {
-  padding-left: 30%;
-  padding-right: 30%;
+  /* padding-left: 30%;
+  padding-right: 30%; */
   height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 body {
@@ -24,7 +27,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: #2d3233;
+  /* color: white; */
 }
 
 button {
@@ -36,17 +39,76 @@ button {
   padding: 5px;
   font-size: 17px;
 }
-
-@media screen and (max-width: 1400px) {
-  #root {
-    padding-left: 30%;
-    padding-right: 30%;
-  }
+.header-component {
+  background: url("http://localhost:3000/public/meal-img.jpg") no-repeat;
+  background-size: cover;
+  height: 600px;
+  /* display: flex;
+  flex-direction: column; */
+  color: white;
+  /* text-align-last: center; */
+  text-align: -webkit-center;
 }
 
-@media screen and (max-width: 750px) {
-  #root {
-    padding-left: 0;
-    padding-right: 0;
+.header-upper {
+  display: flex;
+  justify-content: space-between;
+}
+.footer-component {
+  background-color: lightcoral;
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+  align-items: center;
+}
+.footer-component {
+  bottom: 0;
+  /* position: absolute; */
+}
+
+.menu {
+  display: inline-flex;
+}
+
+.menu li {
+  margin: 20px;
+  color: white;
+}
+
+menu,
+.logo,
+.copyright,
+.footer-menu {
+  margin: 20px;
+}
+.main-component,
+.mealForm {
+  /* text-align: center; */
+  align-items: center;
+  text-align: center;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+input {
+  width: 250px;
+  margin: 5px;
+}
+.mealReservation {
+  margin: 30px;
+}
+
+@media screen and (max-width: 1400px) {
+  /* #root {
+    padding-left: 30%;
+    padding-right: 30%;
+  } */
+
+  @media screen and (max-width: 750px) {
+    #root {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 }
