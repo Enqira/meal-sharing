@@ -1,0 +1,60 @@
+.luminance-top {
+  /* background-color: rgba(28, 28, 34, 0.5); */
+  /* background: radial-gradient(#e66465, #91e59c); */
+  /* -webkit-background-clip: text;
+  background-clip: text; */
+  color: white;
+  font-size: 6vw;
+  font-family: "Source Sans Pro", sans-serif;
+  animation: reveal 3000ms ease-in-out forwards 200ms,
+    glow 3000ms linear infinite 2500ms;
+  margin-top: 90px;
+  /* margin-bottom: 10px; */
+  /* background: rgba(0, 0, 0, 0.1); */
+  @keyframes reveal {
+    80% {
+      letter-spacing: 50px;
+    }
+    100% {
+      background-size: 300% 300%;
+    }
+    from {
+      font-size: 0px;
+      /* background-color: rgba(28, 28, 34, 0); */
+    }
+    to {
+      font-size: 6vw;
+      /* background-color: rgba(28, 28, 34, 0.5); */
+      animation-delay: 10s;
+    }
+  }
+  @keyframes glow {
+    40% {
+      text-shadow: 0 -5px 12px #fff;
+    }
+  }
+}
+.luminance {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 70vw;
+}
+.luminance-bot {
+  font-size: 1.7vw;
+  opacity: 0;
+  animation-name: text-reveal;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-delay: 2.8s;
+  background-color: rgba(28, 28, 34, 0.5);
+  /* background: radial-gradient(#e66465, #91e59c); */
+}
+@keyframes text-reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

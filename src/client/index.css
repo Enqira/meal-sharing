@@ -27,7 +27,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: #2d3233;
+  /* color: white; */
 }
 
 button {
@@ -39,16 +39,27 @@ button {
   padding: 5px;
   font-size: 17px;
 }
-.header-component,
+.header-component {
+  background: url("http://localhost:3000/public/meal-img.jpg") no-repeat;
+  background-size: cover;
+  height: 600px;
+  /* display: flex;
+  flex-direction: column; */
+  color: white;
+  /* text-align-last: center; */
+  text-align: -webkit-center;
+}
+
+.header-upper {
+  display: flex;
+  justify-content: space-between;
+}
 .footer-component {
   background-color: lightcoral;
   display: flex;
   justify-content: space-around;
   width: 100vw;
   align-items: center;
-}
-.header-component {
-  height: 100px;
 }
 .footer-component {
   bottom: 0;
@@ -58,15 +69,17 @@ button {
 .menu {
   display: inline-flex;
 }
+
 .menu li {
   margin: 20px;
+  color: white;
 }
 
 menu,
 .logo,
 .copyright,
 .footer-menu {
-  margin: 30px;
+  margin: 20px;
 }
 .main-component,
 .mealForm {

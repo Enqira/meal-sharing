@@ -12,6 +12,7 @@ import FooterComp from "./components/FooterComp"
 import MealComp from "./components/MealComp"
 import MealsComp from "./components/MealsComp"
 import MealFormComp from "./components/MealFormComp"
+import SearchComp from "./components/SearchComp"
 
 function App() {
   const [meals, setMeals] = useState([])
@@ -33,6 +34,7 @@ function App() {
         <Route exact path="/">
           <HeaderComp />
           <TitleComp />
+          <SearchComp meals={meals} setMeals={setMeals} loading={loading} />
           <MealsComp meals={meals} loading={loading} />
           <FooterComp />
         </Route>

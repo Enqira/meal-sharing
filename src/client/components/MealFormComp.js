@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { useForm } from "react-hook-form"
 const axios = require("axios")
 
-export default function MealComp({ formState, setFormState }) {
+export default function MealFormComp({ formState, setFormState }) {
   const { register, handleSubmit } = useForm("")
 
   console.log(formState)
