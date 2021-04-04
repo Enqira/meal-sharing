@@ -1,0 +1,61 @@
+.meal-comtainer {
+  overflow: hidden;
+  background: lightcoral;
+  margin: 20px;
+  height: 200px;
+  border-radius: 5px;
+  display: flex;
+}
+.meal-comtainer span {
+  color: black;
+}
+.img-container {
+  width: 20%;
+  overflow: hidden;
+}
+.meal-img {
+  height: 100%;
+}
+.meal-info-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.meal-info-upper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 65%;
+  width: 100%;
+}
+.meal-info-container h3 {
+  margin: 10px;
+  overflow: hidden;
+  color: white;
+}
+.meal-description {
+  padding: 5px;
+  margin: 2px;
+  font-size: 16px;
+  background: lightpink;
+  width: 98%;
+  height: 70%;
+}
+
+.meal-info-lower {
+  display: flex;
+  background: lightpink;
+  width: 98%;
+  height: 30%;
+  font-size: 14px;
+  justify-content: space-between;
+  align-items: center;
+}
+/* .meal-info-left {
+  width: 50%;
+} */
+.meal-info-lower p {
+  color: red;
+  margin: 5px;
+}

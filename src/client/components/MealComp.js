@@ -1,68 +1,68 @@
 import React from "react"
-import { useParams } from "react-router-dom"
-import { useForm } from "react-hook-form"
-const axios = require("axios")
+import { Link } from "react-router-dom"
 
-export default function MealComp({ meals }) {
-  const { register, handleSubmit } = useForm("")
-  const params = useParams()
+export default function MealComp({ meal, reservations }) {
+  //format date
+  let date = new Date(meal.when)
+  date = date.toString().split(" ").slice(0, 5).join(" ")
+  date = date.split(":").slice(0, 2).join(":")
 
-  const matchedMeal = meals.find(meal => meal.id === parseInt(params.id))
+  //   get reservations info for this meal
+  const maxReservations = meal.max_reservations
+  let reserved = 0
+  reservations.map(reservation => {
+    if (reservation.meal_id === meal.id) {
+      reserved += reservation.number_of_guests
+    }
+  })
+  const availableSeats = maxReservations - reserved
 
-  const onSubmit = data => {
-    data.id = matchedMeal.id
-    console.log(data)
-    const config = { headers: { "Content-Type": "multipart/form-data" } }
-    axios
-      .post("http://localhost:5000/api/reservations", data)
-      .then(response => console.log(response))
-      .catch(err => console.log(err))
-  }
+  //   get status depending on date
+  let isActive = true
+  let mealDate = new Date(meal.when)
+  mealDate = mealDate.getTime()
+  const currentTime = Date.now()
+  if (currentTime >= mealDate) isActive = false
 
-  return matchedMeal ? (
-    <div className="mealReservation">
-      <h3>{matchedMeal.title}</h3>
-      <p>Origen: {matchedMeal.location} </p>
-      <p>Price: {matchedMeal.price}</p>
-      <p>Please fill this form to make a reservation for this meal:</p>
-
-      <form onSubmit={handleSubmit(onSubmit)} className="reservationForm">
-        <label>Name:</label>
-        <input
-          type="text"
-          name="name"
-          placeholder="name"
-          ref={register}
-          required
-        />
-        <label>Email:</label>
-        <input
-          type="email"
-          name="email"
-          placeholder="email"
-          ref={register}
-          required
-        />
-        <label>Phone:</label>
-        <input
-          type="number"
-          name="phone"
-          placeholder="phone"
-          ref={register}
-          required
-        />
-        <label>Number of guests:</label>
-        <input
-          type="number"
-          name="guests"
-          placeholder="number of guests"
-          ref={register}
-          required
-        />
-        <input type="submit" />
-      </form>
+  return (
+    <div className="meal-comtainer">
+      <div className="img-container">
+        <img className="meal-img" src="/public/meal-img.jpg" alt="meal image" />
+      </div>
+      <div className="meal-info-container">
+        <div className="meal-info-upper">
+          <Link to={`/meals/${meal.id}`}>
+            <h3>{meal.title}</h3>
+          </Link>
+          <p className="meal-description">{meal.description}</p>
+        </div>
+        <div className="meal-info-lower">
+          <div className="meal-info-left">
+            <p>
+              Location: <span>{meal.location} </span>
+            </p>
+            <p>
+              Price: <span>{meal.price}</span>
+            </p>
+          </div>
+          <div className="meal-info-right">
+            <p>
+              Max guests: <span>{`${maxReservations}`}</span>
+            </p>
+            <p>
+              Available seats: <span>{`${availableSeats}`}</span>
+            </p>
+          </div>
+          <div>
+            <p>
+              Date: <span>{date}</span>
+            </p>
+            <p>
+              Status: <span>{isActive ? "Upcoming" : "Ended"}</span>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-  ) : (
-    <h3>{"Meal id out of range"}</h3>
   )
 }

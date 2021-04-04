@@ -29,8 +29,6 @@ export default function SearchComp({ meals, setMeals, loading }) {
         onChange={handleChange}
         required
       />
-
-      <input type="submit" />
     </form>
   )
 }

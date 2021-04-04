@@ -3,7 +3,6 @@
 * {
   font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
-  overflow-x: hidden;
 }
 
 #root {
@@ -81,7 +80,7 @@ menu,
 .footer-menu {
   margin: 20px;
 }
-.main-component,
+
 .mealForm {
   /* text-align: center; */
   align-items: center;
@@ -97,6 +96,10 @@ input {
 }
 .mealReservation {
   margin: 30px;
+}
+.loading {
+  color: red;
+  text-align: center;
 }
 
 @media screen and (max-width: 1400px) {
