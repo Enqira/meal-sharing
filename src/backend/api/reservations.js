@@ -2,11 +2,18 @@ const express = require("express")
 const router = express.Router()
 const knex = require("../database")
 
-// 	Returns all reservations
+// 	Returns all reservations or just reservations with meal_id = id
 router.get("/", async (req, res) => {
+  const id = req.query.meal_id
   try {
-    const reservations = await knex("reservations")
-    res.json(reservations)
+    if (id) {
+      const reservations = await knex("reservations").where("meal_id", id)
+
+      res.send(reservations)
+    } else {
+      const reservations = await knex("reservations")
+      res.json(reservations)
+    }
   } catch (error) {
     throw error
   }
@@ -16,15 +23,27 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     if (req.params.id) {
-      const reservation = await knex("reservations").where({
-        id: req.params.id
-      })
+      const reservation = await knex("reservations").where("id", req.params.id)
+
       res.send(reservation)
     }
   } catch (error) {
     throw error
   }
 })
+
+//return reservations by meal_id
+// router.get("/", async (req, res) => {
+//   try {
+//     if (req.params.id) {
+//       const reservation = await knex("reservations").where("id", req.params.id)
+
+//       res.send(reservation)
+//     }
+//   } catch (error) {
+//     throw error
+//   }
+// })
 
 // 	Adds a new reservation
 router.post("/", async (req, res) => {
