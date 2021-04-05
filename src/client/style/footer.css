@@ -1,0 +1,14 @@
+footer {
+  background-color: #141621;
+  color: #5f6270;
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+  align-items: center;
+  bottom: 0;
+  height: 300px;
+}
+.footer-menu,
+.copyright {
+  margin: 20px;
+}

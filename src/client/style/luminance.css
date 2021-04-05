@@ -6,8 +6,7 @@
   color: white;
   font-size: 0vw;
   font-family: "Source Sans Pro", sans-serif;
-  animation: reveal 3000ms ease-in-out forwards 200ms,
-    glow 2500ms linear infinite 2500ms;
+  animation: reveal 3000ms ease-in-out forwards 200ms, glow 2500ms linear 2500ms;
   margin-top: 90px;
   /* margin-bottom: 10px; */
   /* background: rgba(0, 0, 0, 0.1); */
@@ -20,7 +19,6 @@
       background-size: 300% 300%;
     }
     from {
-      font-size: 0px;
       /* background-color: rgba(28, 28, 34, 0); */
       font-size: 0vw;
     }
@@ -32,7 +30,7 @@
   }
   @keyframes glow {
     40% {
-      text-shadow: 0 -5px 12px #fff;
+      text-shadow: 0 -5px 18px #fff;
     }
   }
 }

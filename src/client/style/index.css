@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+@import "theme.css";
+* {
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+  outline: none;
+}
+
+#root {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+body {
+  margin: 0;
+  font-size: 17px;
+  background-color: #41434e;
+  color: #141621;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background-color: #3e99c0;
+  border-radius: 8px;
+  border-width: 0px;
+  font-weight: 295;
+  color: rgb(255, 255, 255);
+  padding: 5px;
+  font-size: 17px;
+}
+.header-component {
+  background: url("http://localhost:3000/public/meal-img.jpg") no-repeat;
+  background-size: cover;
+  height: 700px;
+  color: white;
+  text-align: -webkit-center;
+}
+
+.header-upper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu {
+  display: inline-flex;
+}
+
+.menu li {
+  margin: 20px;
+  color: white;
+}
+
+menu,
+.logo {
+  margin: 20px;
+}
+.know-more-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.know-more-upper {
+  text-align: center;
+}
+/* Arrow */
+.arrow-container {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes arrow-ani {
+  from {
+    color: #141621;
+  }
+  to {
+    color: #41434e;
+  }
+}
+.arrow {
+  color: #141621;
+  font-size: 34px;
+  animation-name: arrow-ani;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+}
+.arrow:hover {
+  color: #141621;
+  animation: none;
+  cursor: pointer;
+}
+
+.know-more-content {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  background-color: #141621;
+  color: #141621;
+}
+.know-more-content div {
+  background-color: #5f6270;
+  text-align: center;
+}
+.know-more-title {
+  cursor: pointer;
+  margin-bottom: -5px;
+}
+.know-more-content-div {
+  display: flex;
+  margin: 5px 10px 45px 10px;
+}
+.know-more-content-div h3 {
+  color: #141621;
+}
+.know-more-content-div p {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.know-more-content-title {
+  width: 80%;
+  align-self: center;
+  text-align: center;
+  color: #5f6270;
+}
+.know-more-content img {
+  width: 300px;
+  border-radius: 4px;
+}
+/* ------------------------ */
+
+.mealForm {
+  align-items: center;
+  text-align: center;
+  margin: 30px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+input {
+  width: 250px;
+  margin: 5px;
+}
+.mealReservation {
+  margin: 30px;
+}
+.loading {
+  color: red;
+  text-align: center;
+}
+
+.main-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-component-form {
+  display: flex;
+  width: 95%;
+  font-size: 14px;
+}
+
+.main-component-form span,
+.main-component-form label {
+  padding-right: 10px;
+}
+.meals {
+  min-height: 200px;
+}
+input,
+.main-component select {
+  color: #5f6270;
+  background-color: #141621;
+  border: none;
+  height: 25px;
+  border-radius: 2px;
+}
+@media screen and (max-width: 1400px) {
+  /* #root {
+    padding-left: 30%;
+    padding-right: 30%;
+  } */
+
+  @media screen and (max-width: 750px) {
+    #root {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
