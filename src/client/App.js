@@ -7,7 +7,7 @@ import {
 } from "react-router-dom"
 import TestComponent from "./components/TestComponent/TestComponent"
 import HeaderComp from "./components/HeaderComp"
-import TitleComp from "./components/TitleComp"
+import KnowMoreComp from "./components/KnowMoreComp"
 import FooterComp from "./components/FooterComp"
 import ReservComp from "./components/ReservComp"
 import MealsComp from "./components/MealsComp"
@@ -19,6 +19,7 @@ function App() {
   const [loading, setLoading] = useState(true)
   const [formState, setFormState] = useState(true)
   const [reservations, setReservations] = useState([])
+  const [result, setResult] = useState(true)
   //   const [loadingReserv, setLoadingReserv] = useState(true)
 
   useEffect(() => {
@@ -43,12 +44,18 @@ function App() {
       <Switch>
         <Route exact path="/">
           <HeaderComp />
-          <TitleComp />
-          <SearchComp meals={meals} setMeals={setMeals} loading={loading} />
+          <KnowMoreComp />
+          <SearchComp
+            meals={meals}
+            setMeals={setMeals}
+            loading={loading}
+            setResult={setResult}
+          />
           <MealsComp
             meals={meals}
             loading={loading}
             reservations={reservations}
+            result={result}
           />
           <FooterComp />
         </Route>

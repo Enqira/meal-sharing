@@ -4,10 +4,9 @@ import { useForm } from "react-hook-form"
 const API_MEALS = `http://localhost:5000/api/meals`
 const API_SEARCH = "http://localhost:5000/api/search/"
 
-export default function SearchComp({ meals, setMeals, loading }) {
-  const [isEmpty, setIsEmpty] = useState(false)
+export default function SearchComp({ meals, setMeals, loading, setResult }) {
   const handleChange = e => {
-    setIsEmpty(false)
+    setResult(true)
     const data = e.target.value
     let API_URL = API_SEARCH + data
     if (!data) API_URL = API_MEALS
@@ -16,7 +15,7 @@ export default function SearchComp({ meals, setMeals, loading }) {
       .then(data => {
         setMeals(data)
         if (data.length === 0) {
-          setIsEmpty(true)
+          setResult(false)
         }
       })
   }
@@ -28,7 +27,6 @@ export default function SearchComp({ meals, setMeals, loading }) {
 
   return (
     <form onSubmit={onSubmit} className="mealForm" autoComplete="off">
-      {isEmpty && <label className="search-noresult">No results...</label>}
       <label>Search for a meal:</label>
       <input
         type="text"

@@ -5,7 +5,7 @@ export default function HeaderComp() {
   return (
     <header className="header-component">
       <div className="header-upper">
-        <span className="logo">FoodFood</span>
+        <span className="logo">invita</span>
         <ul className="menu">
           <Link to={"/"}>
             <li>Home </li>
@@ -22,7 +22,7 @@ export default function HeaderComp() {
         </ul>
       </div>
       <div className="luminance">
-        <div className="luminance-top">FoodFood</div>
+        <div className="luminance-top">invita</div>
         <div className="luminance-bot">
           <p>
             The place where you can share your favorite dishes with others, and

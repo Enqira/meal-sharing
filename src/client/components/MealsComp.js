@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import MealComp from "./MealComp"
 
-export default function MealsComp({ meals, loading, reservations }) {
+export default function MealsComp({ meals, loading, reservations, result }) {
   const [showOption, setShowOption] = useState("all")
   const [sortOption, setSortOption] = useState("latest")
   const [newMeals, setNewMeals] = useState(meals)
@@ -62,14 +62,14 @@ export default function MealsComp({ meals, loading, reservations }) {
       }
       //   ------------------------------
     }
-  }, [showOption, loading, meals, sortOption])
+  }, [showOption, loading, meals, sortOption, result])
 
   return (
     <section className="main-component">
       <div className="main-component-form">
         <form>
           <label>
-            Show:
+            <span> Show:</span>
             <select value={showOption} onChange={handleShowChange}>
               <option value="all">All</option>
               <option value="upcoming">Upcoming</option>
@@ -80,7 +80,7 @@ export default function MealsComp({ meals, loading, reservations }) {
 
         <form>
           <label>
-            Sort by:
+            <span> Sort by:</span>
             <select value={sortOption} onChange={handleSortChange}>
               <option value="latest">Latest created</option>
               <option value="oldest">Oldest created</option>
@@ -93,11 +93,15 @@ export default function MealsComp({ meals, loading, reservations }) {
       {/* if not loading display meals */}
       {!loading ? (
         <div className="meals">
-          {/* .slice(0)
-            .reverse() */}
           {sort(newMeals).map(meal => (
             <MealComp meal={meal} key={meal.id} reservations={reservations} />
           ))}
+          <div
+            className="no-result"
+            style={{ display: result ? "none" : "flex" }}
+          >
+            No results found
+          </div>
         </div>
       ) : (
         <div className="loading">loading...</div>
