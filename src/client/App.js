@@ -27,6 +27,7 @@ function App() {
     Promise.all([mealCall, reservCall])
       .then(res => Promise.all(res.map(res => res.json())))
       .then(data => {
+        console.log(data)
         setMeals(data[0])
         setReservations(data[1])
       })

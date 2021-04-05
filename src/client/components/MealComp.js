@@ -15,7 +15,10 @@ export default function MealComp({ meal, reservations }) {
       reserved += reservation.number_of_guests
     }
   })
-  const availableSeats = maxReservations - reserved
+  let availableSeats = maxReservations - reserved
+  if (availableSeats <= 0) {
+    availableSeats = "Fully booked"
+  }
 
   //   get status depending on date
   let isActive = true

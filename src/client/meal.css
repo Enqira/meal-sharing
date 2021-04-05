@@ -5,19 +5,22 @@
   height: 200px;
   border-radius: 5px;
   display: flex;
+  width: 95vw;
 }
 .meal-comtainer span {
   color: black;
 }
 .img-container {
-  width: 20%;
+  width: 200px;
+  min-width: 200px;
   overflow: hidden;
+  align-self: center;
 }
 .meal-img {
-  height: 100%;
+  height: 205px;
 }
 .meal-info-container {
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,7 +58,8 @@
 /* .meal-info-left {
   width: 50%;
 } */
-.meal-info-lower p {
+.meal-info-lower p,
+.search-noresult {
   color: red;
   margin: 5px;
 }
