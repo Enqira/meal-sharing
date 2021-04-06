@@ -5,18 +5,10 @@ export default function FooterComp() {
     <footer className="footer-component">
       <span className="copyright">Developed by Enqira</span>
       <ul className="footer-menu">
-        <li>
-          <a href="#home">Youtube</a>
-        </li>
-        <li>
-          <a href="#news">Facebook</a>
-        </li>
-        <li>
-          <a href="#contact">Instagram</a>
-        </li>
-        <li>
-          <a href="#about">Twitter</a>
-        </li>
+        <li>Youtube</li>
+        <li>Facebook</li>
+        <li>Instagram</li>
+        <li>Twitter</li>
       </ul>
     </footer>
   )

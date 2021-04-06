@@ -13,6 +13,7 @@ import ReservComp from "./components/ReservComp"
 import MealsComp from "./components/MealsComp"
 import MealFormComp from "./components/MealFormComp"
 import SearchComp from "./components/SearchComp"
+import BackHomeComp from "./components/BackHomeComp"
 
 function App() {
   const [meals, setMeals] = useState([])
@@ -21,6 +22,7 @@ function App() {
   const [reservations, setReservations] = useState([])
   const [result, setResult] = useState(true)
   const topRef = useRef()
+  const addMealRef = useRef()
 
   useEffect(() => {
     const mealCall = fetch("http://localhost:5000/api/meals")
@@ -64,11 +66,18 @@ function App() {
           {!loading ? <ReservComp meals={meals} /> : <div>loading...</div>}
         </Route>
         <Route exact path="/meals">
-          <MealFormComp formState={formState} setFormState={setFormState} />
+          <BackHomeComp />
+          <MealFormComp
+            formState={formState}
+            setFormState={setFormState}
+            addMealRef={addMealRef}
+          />
           <MealsComp
             meals={meals}
             loading={loading}
             reservations={reservations}
+            result={result}
+            addMealRef={addMealRef}
           />
         </Route>
         <Route exact path="/test-component">

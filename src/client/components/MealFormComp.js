@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { useForm } from "react-hook-form"
 const axios = require("axios")
 
-export default function MealFormComp({ formState, setFormState }) {
+export default function MealFormComp({ formState, setFormState, addMealRef }) {
   const { register, handleSubmit } = useForm("")
 
   console.log(formState)
@@ -22,7 +22,7 @@ export default function MealFormComp({ formState, setFormState }) {
   }
 
   return (
-    <div>
+    <div className="form-container" ref={addMealRef}>
       <button onClick={() => handleStyle()}>
         {formState ? "Add meal" : "Cancel"}
       </button>
@@ -80,7 +80,7 @@ export default function MealFormComp({ formState, setFormState }) {
           ref={register}
           required
         />
-        <input type="submit" />
+        <input type="submit" className="submit-btn" />
       </form>
     </div>
   )

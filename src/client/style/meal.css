@@ -8,7 +8,8 @@
   width: 95vw;
 }
 .meal-comtainer span {
-  color: #141621;
+  /* color: #bdbec4; */
+  color: #939497;
 }
 .img-container {
   width: 200px;
@@ -35,7 +36,11 @@
 .meal-info-container h3 {
   margin: 10px;
   overflow: hidden;
-  color: #5f6270;
+  /* color: #5f6270; */
+  color: #939497;
+}
+.meal-info-container h3:hover {
+  color: #bdbec4;
 }
 .meal-description {
   padding: 5px;
@@ -60,10 +65,7 @@
   width: 50%;
 } */
 .meal-info-lower p {
-  color: #41434e;
-  margin: 5px;
-}
-.no-result {
-  color: red;
+  color: #141621;
+
   margin: 5px;
 }
