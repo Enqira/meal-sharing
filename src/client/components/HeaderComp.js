@@ -1,9 +1,9 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
-export default function HeaderComp() {
+export default function HeaderComp({ topRef }) {
   return (
-    <header className="header-component">
+    <header className="header-component" ref={topRef}>
       <div className="header-upper">
         <span className="logo">invita</span>
         <ul className="menu">

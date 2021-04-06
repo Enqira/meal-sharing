@@ -1,8 +1,14 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import { Link } from "react-router-dom"
 import MealComp from "./MealComp"
 
-export default function MealsComp({ meals, loading, reservations, result }) {
+export default function MealsComp({
+  meals,
+  loading,
+  reservations,
+  result,
+  topRef
+}) {
   const [showOption, setShowOption] = useState("all")
   const [sortOption, setSortOption] = useState("latest")
   const [newMeals, setNewMeals] = useState(meals)
@@ -64,6 +70,13 @@ export default function MealsComp({ meals, loading, reservations, result }) {
     }
   }, [showOption, loading, meals, sortOption, result])
 
+  //   for go top arrow
+
+  const handleArrowClick = () => {
+    topRef.current.scrollIntoView({ behavior: "smooth" })
+  }
+  //   finished
+
   return (
     <section className="main-component">
       <div className="main-component-form">
@@ -85,7 +98,7 @@ export default function MealsComp({ meals, loading, reservations, result }) {
               <option value="latest">Latest created</option>
               <option value="oldest">Oldest created</option>
               <option value="lower-price">Lowest price</option>
-              <option value="higher-price">Higher price</option>
+              <option value="higher-price">Highest price</option>
             </select>
           </label>
         </form>
@@ -100,12 +113,22 @@ export default function MealsComp({ meals, loading, reservations, result }) {
             className="no-result"
             style={{ display: result ? "none" : "flex" }}
           >
-            No results found
+            No results found!
           </div>
         </div>
       ) : (
         <div className="loading">loading...</div>
       )}
+      <div className="go-top">
+        <div className="arrow-container">
+          <div className="arrow" id="arrow-bottom" onClick={handleArrowClick}>
+            ⮞
+          </div>
+        </div>
+        <h3 className="go-top-text" onClick={handleArrowClick}>
+          Go to the top!
+        </h3>
+      </div>
     </section>
   )
 }

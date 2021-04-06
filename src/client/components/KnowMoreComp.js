@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 
 export default function KnowMoreComp({ meals, loading }) {
   const [display, setDisplay] = useState("none")
   const [arrowTransform, setArrowTransform] = useState("rotate(90deg)")
+  const ref = useRef()
   const handleArrowClick = () => {
     if (display === "none") {
       setArrowTransform("rotate(-90deg)")
       setDisplay("flex")
+      ref.current.scrollIntoView({ behavior: "smooth" })
     } else {
       setArrowTransform("rotate(90deg)")
       setDisplay("none")
@@ -25,7 +27,7 @@ export default function KnowMoreComp({ meals, loading }) {
   )
 
   return (
-    <section className="know-more-container">
+    <section className="know-more-container" ref={ref}>
       <div className="know-more-upper">
         <h3 className="know-more-title" onClick={handleArrowClick}>
           click to learn how it works!

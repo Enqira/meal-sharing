@@ -100,6 +100,13 @@ menu,
   animation: none;
   cursor: pointer;
 }
+#arrow-bottom {
+  transform: rotate(-90deg);
+}
+.go-top-text {
+  margin-top: -5px;
+  cursor: pointer;
+}
 
 .know-more-content {
   width: 95%;
@@ -187,6 +194,12 @@ input,
   border: none;
   height: 25px;
   border-radius: 2px;
+}
+.no-result {
+  color: red;
+  margin: 5px;
+  height: 200px;
+  align-items: center;
 }
 @media screen and (max-width: 1400px) {
   /* #root {
