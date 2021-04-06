@@ -3,7 +3,7 @@ import React from "react"
 export default function FooterComp() {
   return (
     <footer className="footer-component">
-      <span className="copyright">Copyright Enqira 2021</span>
+      <span className="copyright">Developed by Enqira</span>
       <ul className="footer-menu">
         <li>
           <a href="#home">Youtube</a>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import {
   BrowserRouter as Router,
   Route,
@@ -20,7 +20,7 @@ function App() {
   const [formState, setFormState] = useState(true)
   const [reservations, setReservations] = useState([])
   const [result, setResult] = useState(true)
-  //   const [loadingReserv, setLoadingReserv] = useState(true)
+  const topRef = useRef()
 
   useEffect(() => {
     const mealCall = fetch("http://localhost:5000/api/meals")
@@ -43,7 +43,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/">
-          <HeaderComp />
+          <HeaderComp topRef={topRef} />
           <KnowMoreComp />
           <SearchComp
             meals={meals}
@@ -56,6 +56,7 @@ function App() {
             loading={loading}
             reservations={reservations}
             result={result}
+            topRef={topRef}
           />
           <FooterComp />
         </Route>
