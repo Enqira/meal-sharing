@@ -7,6 +7,7 @@ import MealComp from "./MealComp"
 export default function ReservComp({ meals }) {
   const { register, handleSubmit } = useForm("")
   const params = useParams()
+  console.log(params.id)
 
   const matchedMeal = meals.find(meal => meal.id === parseInt(params.id))
 

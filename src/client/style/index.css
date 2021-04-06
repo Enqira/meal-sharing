@@ -29,15 +29,30 @@ a {
   text-decoration: none;
 }
 
-button {
-  background-color: #3e99c0;
-  border-radius: 8px;
+button,
+.submit-btn {
+  background-color: #141621;
+  border-radius: 2px;
   border-width: 0px;
   font-weight: 295;
-  color: rgb(255, 255, 255);
+  color: #5f6270;
   padding: 5px;
-  font-size: 17px;
+  font-size: 16px;
+  width: 250px;
+  align-self: center;
 }
+button:hover,
+.submit-btn:hover {
+  cursor: pointer;
+  color: #bdbec4;
+}
+.back-home-container button {
+  width: 120px;
+}
+.back-home-container {
+  margin: 2%;
+}
+
 .header-component {
   background: url("http://localhost:3000/public/meal-img.jpg") no-repeat;
   background-size: cover;
@@ -96,9 +111,9 @@ menu,
   animation-iteration-count: infinite;
 }
 .arrow:hover {
-  color: #141621;
   animation: none;
   cursor: pointer;
+  color: #8a8a8b;
 }
 #arrow-bottom {
   transform: rotate(-90deg);
@@ -106,6 +121,9 @@ menu,
 .go-top-text {
   margin-top: -5px;
   cursor: pointer;
+}
+.go-top-text:hover {
+  color: #8a8a8b;
 }
 
 .know-more-content {
@@ -124,13 +142,16 @@ menu,
   cursor: pointer;
   margin-bottom: -5px;
 }
+.know-more-title:hover {
+  color: #8a8a8b;
+}
 .know-more-content-div {
   display: flex;
   margin: 5px 10px 45px 10px;
 }
-.know-more-content-div h3 {
+/* .know-more-content-div h3 {
   color: #141621;
-}
+} */
 .know-more-content-div p {
   margin-left: 20px;
   margin-right: 20px;
@@ -146,20 +167,22 @@ menu,
   border-radius: 4px;
 }
 /* ------------------------ */
-
+.form-container {
+  background-color: #41434e;
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+}
 .mealForm {
   align-items: center;
   text-align: center;
-  margin: 30px;
+  margin: 15px;
 }
 form {
   display: flex;
   flex-direction: column;
 }
-input {
-  width: 250px;
-  margin: 5px;
-}
+
 .mealReservation {
   margin: 30px;
 }
@@ -194,6 +217,18 @@ input,
   border: none;
   height: 25px;
   border-radius: 2px;
+}
+
+input {
+  width: 250px;
+  margin: 5px;
+}
+.submit-btn {
+  margin-top: 20px;
+  height: 30px;
+}
+.submit-btn:hover {
+  cursor: pointer;
 }
 .no-result {
   color: red;

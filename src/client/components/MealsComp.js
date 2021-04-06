@@ -7,7 +7,8 @@ export default function MealsComp({
   loading,
   reservations,
   result,
-  topRef
+  topRef,
+  addMealRef
 }) {
   const [showOption, setShowOption] = useState("all")
   const [sortOption, setSortOption] = useState("latest")
@@ -73,7 +74,8 @@ export default function MealsComp({
   //   for go top arrow
 
   const handleArrowClick = () => {
-    topRef.current.scrollIntoView({ behavior: "smooth" })
+    addMealRef && addMealRef.current.scrollIntoView({ behavior: "smooth" })
+    topRef && topRef.current.scrollIntoView({ behavior: "smooth" })
   }
   //   finished
 
