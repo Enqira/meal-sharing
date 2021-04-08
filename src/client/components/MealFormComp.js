@@ -23,6 +23,7 @@ export default function MealFormComp({ formState, setFormState, addMealRef }) {
 
   return (
     <div className="form-container" ref={addMealRef}>
+      <h4>Become a host, add a meal now.</h4>
       <button onClick={() => handleStyle()}>
         {formState ? "Add meal" : "Cancel"}
       </button>
@@ -31,7 +32,7 @@ export default function MealFormComp({ formState, setFormState, addMealRef }) {
         className="mealForm"
         style={{ display: formState ? "none" : "flex" }}
       >
-        <label>Add a new meal</label>
+        {/* <label>Add a new meal</label> */}
         <label>title:</label>
         <input
           type="text"

@@ -133,9 +133,12 @@ menu,
   margin: 10px;
   background-color: #141621;
   color: white;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 10px 0px black;
+  box-shadow: 0px 0px 10px 0px black;
+  padding: 20px;
 }
 .know-more-content div {
-  background-color: #5f6270;
   text-align: center;
 }
 .know-more-title {
@@ -155,10 +158,15 @@ menu,
   margin-right: 20px;
 }
 .know-more-content-title {
-  width: 80%;
+  padding: 15px;
+  width: 60%;
   align-self: center;
   text-align: center;
   color: white;
+  margin: 15px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 0px 10px -1 px white;
+  box-shadow: 0px 0px 10px -2px white;
 }
 .know-more-content img {
   width: 300px;
@@ -166,10 +174,13 @@ menu,
 }
 /* ------------------------ */
 .form-container {
-  background-color: #41434e;
+  background-color: white;
   display: flex;
   flex-direction: column;
   margin: 30px;
+}
+.form-container h4 {
+  text-align: center;
 }
 .mealForm {
   align-items: center;
