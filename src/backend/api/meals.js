@@ -70,6 +70,7 @@ router.get("/:id", async (req, res) => {
     if (req.params.id) {
       const meal = await knex("meals").where({ id: req.params.id })
       res.send(meal)
+      console.log("got it")
     }
   } catch (error) {
     throw error
