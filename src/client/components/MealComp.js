@@ -49,8 +49,12 @@ export default function MealComp({ meal, reservations }) {
             </p>
           </div>
           <div className="meal-info-right">
-            <p>{/* Max guests: <span>{`${maxReservations}`}</span> */}</p>
-            <p>{/* Available seats: <span>{`${availableSeats}`}</span> */}</p>
+            <p>
+              Max guests: <span>{`${maxReservations}`}</span>
+            </p>
+            <p>
+              Available seats: <span>{`${availableSeats}`}</span>
+            </p>
           </div>
           <div>
             <p>

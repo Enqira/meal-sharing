@@ -33,7 +33,7 @@ export default function MealFormComp({ formState, setFormState, addMealRef }) {
         style={{ display: formState ? "none" : "flex" }}
       >
         {/* <label>Add a new meal</label> */}
-        <label>title:</label>
+        <label>title</label>
         <input
           type="text"
           name="title"
@@ -41,7 +41,7 @@ export default function MealFormComp({ formState, setFormState, addMealRef }) {
           ref={register}
           required
         />
-        <label>description:</label>
+        <label>description</label>
         <input
           type="text"
           name="description"
@@ -49,7 +49,7 @@ export default function MealFormComp({ formState, setFormState, addMealRef }) {
           ref={register}
           required
         />
-        <label>location:</label>
+        <label>location</label>
         <input
           type="text"
           name="location"
@@ -57,7 +57,7 @@ export default function MealFormComp({ formState, setFormState, addMealRef }) {
           ref={register}
           required
         />
-        <label>when:</label>
+        <label>when</label>
         <input
           type="date"
           name="when"
@@ -65,7 +65,7 @@ export default function MealFormComp({ formState, setFormState, addMealRef }) {
           ref={register}
           required
         />
-        <label>price:</label>
+        <label>price</label>
         <input
           type="number"
           name="price"
@@ -73,7 +73,7 @@ export default function MealFormComp({ formState, setFormState, addMealRef }) {
           ref={register}
           required
         />
-        <label>max reservations:</label>
+        <label>max reservations</label>
         <input
           type="number"
           name="max_reservations"

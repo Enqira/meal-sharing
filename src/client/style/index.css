@@ -28,6 +28,10 @@ ul {
 a {
   text-decoration: none;
 }
+p,
+label {
+  font-size: 15 px;
+}
 
 button,
 .submit-btn {
@@ -181,16 +185,19 @@ menu,
 }
 .form-container h4 {
   text-align: center;
+  margin-top: 0;
 }
-.mealForm {
+form {
   align-items: center;
   text-align: center;
   margin: 15px;
-}
-form {
   display: flex;
   flex-direction: column;
 }
+/* form {
+  display: flex;
+  flex-direction: column;
+} */
 
 .mealReservation {
   margin: 30px;
@@ -244,6 +251,11 @@ input {
   margin: 5px;
   height: 200px;
   align-items: center;
+}
+.reservSubmitLabel {
+  display: none;
+  text-align: center;
+  color: red;
 }
 @media screen and (max-width: 1400px) {
   /* #root {
