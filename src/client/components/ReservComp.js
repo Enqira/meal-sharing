@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { useParams } from "react-router-dom"
 import { useForm } from "react-hook-form"
 const axios = require("axios")
@@ -6,11 +6,13 @@ import MealComp from "./MealComp"
 
 export default function ReservComp({ meals }) {
   const { register, handleSubmit } = useForm("")
+  //   const [matchedMeal, setMatchedMeal] = useState([])
   const params = useParams()
   console.log(params.id)
 
   const matchedMeal = meals.find(meal => meal.id === parseInt(params.id))
 
+  console.log(matchedMeal)
   const onSubmit = data => {
     data.id = matchedMeal.id
     console.log(data)

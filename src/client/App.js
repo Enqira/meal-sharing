@@ -63,7 +63,11 @@ function App() {
           <FooterComp />
         </Route>
         <Route exact path="/meals/:id">
-          {!loading ? <ReservComp meals={meals} /> : <div>loading...</div>}
+          {!loading ? (
+            <ReservComp meals={meals} reservations={reservations} />
+          ) : (
+            <div>loading...</div>
+          )}
         </Route>
         <Route exact path="/meals">
           <BackHomeComp />
