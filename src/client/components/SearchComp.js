@@ -4,9 +4,15 @@ import { useForm } from "react-hook-form"
 const API_MEALS = `http://localhost:5000/api/meals`
 const API_SEARCH = "http://localhost:5000/api/search/"
 
-export default function SearchComp({ meals, setMeals, loading, setResult }) {
+export default function SearchComp({
+  meals,
+  setMeals,
+  loading,
+  setResult,
+  inputRef
+}) {
   const [inputId, setInputId] = useState()
-  const inputRef = useRef()
+  //   const inputRef = useRef()
   const handleChange = e => {
     setResult(true)
     const data = e.target.value

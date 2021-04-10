@@ -1,7 +1,8 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 
 export default function MealComp({ meal, reservations }) {
+  const [reserve, setReserve] = useState(true)
   //format date
   let date = new Date(meal.when)
   date = date.toString().split(" ").slice(0, 5).join(" ")
@@ -27,6 +28,14 @@ export default function MealComp({ meal, reservations }) {
   const currentTime = Date.now()
   if (currentTime >= mealDate) isActive = false
 
+  useEffect(() => {
+    //  show or not the reserve button depending on these conditions
+    if (availableSeats === "Fully booked" || isActive === false) {
+      console.log("if statement")
+      setReserve(false)
+    }
+  }, [])
+
   return (
     <div className="meal-comtainer">
       <div className="img-container">
@@ -34,9 +43,8 @@ export default function MealComp({ meal, reservations }) {
       </div>
       <div className="meal-info-container">
         <div className="meal-info-upper">
-          <Link to={`/meals/${meal.id}`}>
-            <h3>{meal.title}</h3>
-          </Link>
+          <h3>{meal.title}</h3>
+
           <p className="meal-description">{meal.description}</p>
         </div>
         <div className="meal-info-lower">
@@ -49,8 +57,12 @@ export default function MealComp({ meal, reservations }) {
             </p>
           </div>
           <div className="meal-info-right">
-            <p>{/* Max guests: <span>{`${maxReservations}`}</span> */}</p>
-            <p>{/* Available seats: <span>{`${availableSeats}`}</span> */}</p>
+            <p>
+              Max guests: <span>{`${maxReservations}`}</span>
+            </p>
+            <p>
+              Available seats: <span>{`${availableSeats}`}</span>
+            </p>
           </div>
           <div>
             <p>
@@ -60,6 +72,15 @@ export default function MealComp({ meal, reservations }) {
               Status: <span>{isActive ? "Upcoming" : "Ended"}</span>
             </p>
           </div>
+        </div>
+        <div>
+          {reserve ? (
+            <Link to={`/meals/${meal.id}`}>
+              <button>reserve</button>
+            </Link>
+          ) : (
+            <button>cannot reserve</button>
+          )}
         </div>
       </div>
     </div>
