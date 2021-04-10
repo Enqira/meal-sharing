@@ -42,7 +42,7 @@ export default function MealFormComp({ formState, setFormState, addMealRef }) {
           required
         />
         <label>description</label>
-        <input
+        <textarea
           type="text"
           name="description"
           placeholder="description"

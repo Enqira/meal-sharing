@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react"
+import { Link } from "react-router-dom"
 
-export default function KnowMoreComp({ meals, loading }) {
+export default function KnowMoreComp({ meals, loading, inputRef }) {
   const [display, setDisplay] = useState("none")
   const [arrowTransform, setArrowTransform] = useState("rotate(90deg)")
   const ref = useRef()
@@ -25,6 +26,9 @@ export default function KnowMoreComp({ meals, loading }) {
       }}
     />
   )
+  const handleClickFM = () => {
+    inputRef.current.scrollIntoView({ behavior: "smooth" })
+  }
 
   return (
     <section className="know-more-container" ref={ref}>
@@ -60,6 +64,9 @@ export default function KnowMoreComp({ meals, loading }) {
               survived not only five centuries, but also the leap into
               electronic typesetting,
             </p>
+            <Link to={`/meals/`}>
+              <button>Add meal</button>
+            </Link>
           </div>
           <img className="img" src="/public/meal-img.jpg" alt="host image" />
         </div>
@@ -75,6 +82,9 @@ export default function KnowMoreComp({ meals, loading }) {
               survived not only five centuries, but also the leap into
               electronic typesetting,
             </p>
+            {/* <Link to={`/meals/`}> */}
+            <button onClick={handleClickFM}>Find a meal</button>
+            {/* </Link> */}
           </div>
           <img className="img" src="/public/meal-img.jpg" alt="host image" />
         </div>

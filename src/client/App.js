@@ -23,6 +23,7 @@ function App() {
   const [result, setResult] = useState(true)
   const topRef = useRef()
   const addMealRef = useRef()
+  const inputRef = useRef()
 
   useEffect(() => {
     const mealCall = fetch("http://localhost:5000/api/meals")
@@ -46,12 +47,13 @@ function App() {
       <Switch>
         <Route exact path="/">
           <HeaderComp topRef={topRef} />
-          <KnowMoreComp />
+          <KnowMoreComp inputRef={inputRef} />
           <SearchComp
             meals={meals}
             setMeals={setMeals}
             loading={loading}
             setResult={setResult}
+            inputRef={inputRef}
           />
           <MealsComp
             meals={meals}
