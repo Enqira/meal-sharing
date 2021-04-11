@@ -24,18 +24,14 @@ export default function MealsComp({
   const sort = array => {
     switch (sortOption) {
       case "lower-price":
-        console.log("lower-price")
         return array.sort((a, b) => a.price - b.price)
       case "higher-price":
-        console.log("higher-price")
         return array.sort((a, b) => b.price - a.price)
       case "oldest":
-        console.log("oldest")
         return array.sort(
           (a, b) => new Date(a.created_date) - new Date(b.created_date)
         )
       default:
-        console.log("latest bbb")
         return array.sort(
           (a, b) => new Date(b.created_date) - new Date(a.created_date)
         )

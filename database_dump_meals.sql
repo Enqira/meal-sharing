@@ -6,10 +6,10 @@ USE `meal-sharing`;
 
 DROP TABLE IF EXISTS `meals`;
 CREATE TABLE `meals` (
-  `idmeals` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(45) DEFAULT NULL,
   `number_of_guests` int(11) DEFAULT NULL,
-  PRIMARY KEY (`idmeals`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6;
 
 --
@@ -18,6 +18,6 @@ CREATE TABLE `meals` (
 
 LOCK TABLES `meals` WRITE;
 /*!40000 ALTER TABLE `meals` DISABLE KEYS */;
-INSERT INTO `meals` VALUES (1,'bla bla bla',3),(2,'bla bla bla',3),(3,'asdasd',7),(4,'benjamins karry',10),(5,'oooooooooo',1);
+INSERT INTO `meals` VALUES (1,'test meal',3),(2,'test meal 2',3),(3,'test meal 3',7)
 /*!40000 ALTER TABLE `meals` ENABLE KEYS */;
 UNLOCK TABLES;

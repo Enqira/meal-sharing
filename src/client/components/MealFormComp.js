@@ -5,18 +5,16 @@ const axios = require("axios")
 export default function MealFormComp({ formState, setFormState, addMealRef }) {
   const { register, handleSubmit } = useForm("")
 
-  console.log(formState)
   const handleStyle = () => {
     formState ? setFormState(false) : setFormState(true)
   }
 
   const onSubmit = data => {
-    console.log(data)
     const config = { headers: { "Content-Type": "multipart/form-data" } }
     axios
       .post("http://localhost:5000/api/meals", data)
       .then(response => {
-        console.log(response)
+        console.log(response.status)
       })
       .catch(err => console.log(err))
   }
@@ -24,7 +22,7 @@ export default function MealFormComp({ formState, setFormState, addMealRef }) {
   return (
     <div className="form-container" ref={addMealRef}>
       <h4>Become a host, add a meal now.</h4>
-      <button onClick={() => handleStyle()}>
+      <button className="small-btn dark-btn" onClick={() => handleStyle()}>
         {formState ? "Add meal" : "Cancel"}
       </button>
       <form

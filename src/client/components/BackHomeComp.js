@@ -5,7 +5,7 @@ export default function BackHomeComp() {
   return (
     <div className="back-home-container">
       <Link to={"/"}>
-        <button>Back Home</button>
+        <button className="small-btn dark-btn">Back Home</button>
       </Link>
     </div>
   )

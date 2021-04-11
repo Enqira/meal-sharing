@@ -34,11 +34,10 @@ label {
   font-size: 15 px;
 }
 
-button,
 .submit-btn {
-  background-color: #141621;
+  background: #212b3d;
   border-radius: 2px;
-  border-width: 0px;
+  border-width: 0;
   font-weight: 295;
   color: white;
   padding: 5px;
@@ -85,13 +84,25 @@ menu,
 .logo {
   margin: 20px;
 }
+.logo {
+  font-size: 30px;
+  font-family: "Kaushan Script", cursive;
+  color: white;
+  font-weight: 400;
+  /* background: #141621; */
+  background: #212b3d;
+  border-radius: 20px 5px 20px 5px;
+  padding: 2px 25px 2px 25px;
+  -webkit-box-shadow: 0 0 10px 0 white;
+  box-shadow: 0 0 10px 0 white;
+}
 .know-more-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
-  -webkit-box-shadow: 0px -30px 45px -20px black;
-  box-shadow: 0px -30px 45px -20px black;
+  -webkit-box-shadow: 0 -30px 45px -20px black;
+  box-shadow: 0 -30px 45px -20px black;
 }
 .know-more-upper {
   text-align: center;
@@ -139,12 +150,12 @@ menu,
   display: flex;
   flex-direction: column;
   margin: 10px;
-  background-color: #141621;
+  background: #212b3d;
   color: white;
   border-radius: 5px;
-  -webkit-box-shadow: 0px 0px 10px 0px black;
-  box-shadow: 0px 0px 10px 0px black;
-  padding: 5px 20px 0px 20px;
+  -webkit-box-shadow: 0 0 10px 0 black;
+  box-shadow: 0 0 10px 0 black;
+  padding: 5px 20px 0 20px;
   max-width: 1900px;
   position: relative;
   animation-name: appear;
@@ -156,7 +167,7 @@ menu,
   }
 
   100% {
-    top: 0px;
+    top: 0;
   }
 }
 
@@ -172,7 +183,7 @@ menu,
 }
 .know-more-content-div {
   display: flex;
-  margin: 5px 10px 45px 10px;
+  margin: 5px 10px 15px 10px;
 }
 
 .know-more-content-div p {
@@ -187,12 +198,28 @@ menu,
   color: white;
   margin: 15px;
   border-radius: 8px;
-  -webkit-box-shadow: 0px 0px 10px -1 px white;
-  box-shadow: 0px 0px 10px -2px white;
+  -webkit-box-shadow: 0 0 10px -1 px white;
+  box-shadow: 0 0 10px -2px white;
 }
-.know-more-content img {
+/* .know-more-content img {
   width: 250px;
   border-radius: 4px;
+} */
+.img-container {
+  width: 250px;
+  min-width: 250px;
+  overflow: hidden;
+  align-self: center;
+}
+.img-container img {
+  border-radius: 8px;
+  height: 255px;
+}
+.img-container-small {
+  min-width: 220px;
+}
+.img-container-small .img {
+  height: 220px;
 }
 /* ------------------------ */
 .form-container {
@@ -200,6 +227,7 @@ menu,
   display: flex;
   flex-direction: column;
   margin: 30px;
+  align-items: center;
 }
 .form-container div {
   display: flex;
@@ -250,7 +278,7 @@ input,
 textarea,
 .main-component select {
   color: white;
-  background-color: #141621;
+  background: #212b3d;
   border: none;
   height: 25px;
   border-radius: 2px;
@@ -283,21 +311,30 @@ textarea {
   color: red;
 }
 
-.meal-comtainer button,
-.know-more-content button {
+.small-btn {
   width: 140px;
-  color: black;
-  background-color: white;
   margin-bottom: 10px;
+  border-radius: 2px;
+  border-width: 0;
+  font-weight: 295;
+  padding: 5px;
+  font-size: 16px;
 }
-@media screen and (max-width: 1400px) {
-  @media screen and (max-width: 750px) {
-    #root {
-      padding-left: 0;
-      padding-right: 0;
-    }
+.white-btn {
+  color: #212b3d;
+  background-color: white;
+}
+.dark-btn {
+  color: white;
+  background-color: #212b3d;
+}
+@media screen and (max-width: 750px) {
+  #root {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
+
 @media (min-width: 1440px) {
   .header-component {
     height: 92vh;
