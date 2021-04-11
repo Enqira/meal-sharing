@@ -49,7 +49,6 @@
   animation-duration: 2s;
   animation-fill-mode: forwards;
   animation-delay: 2.5s;
-  /* background: rgba(0, 0, 0, 0.473); */
   background: #212b3d;
   -webkit-box-shadow: 0 0 10px 0 white;
   box-shadow: 0 0 10px 0 white;
