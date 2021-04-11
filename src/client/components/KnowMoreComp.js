@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react"
 import { Link } from "react-router-dom"
+import visitor from "../assets/images/visitor.png"
+import host from "../assets/images/host.png"
 
 export default function KnowMoreComp({ meals, loading, inputRef }) {
   const [display, setDisplay] = useState("none")
@@ -70,11 +72,7 @@ export default function KnowMoreComp({ meals, loading, inputRef }) {
             </Link>
           </div>
           <div className="img-container img-container-small">
-            <img
-              className="img"
-              src="/src/client/assets/images/host.png"
-              alt="host image"
-            />
+            <img className="img" src={host} alt="host image" />
           </div>
         </div>
 
@@ -94,11 +92,7 @@ export default function KnowMoreComp({ meals, loading, inputRef }) {
             </button>
           </div>
           <div className="img-container img-container-small">
-            <img
-              className="img"
-              src="/src/client/assets/images/visitor.png"
-              alt="host image"
-            />
+            <img className="img" src={visitor} alt="visitor image" />
           </div>
         </div>
       </div>
