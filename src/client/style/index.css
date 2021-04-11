@@ -58,7 +58,8 @@ button:hover,
 }
 
 .header-component {
-  background: url("http://localhost:3000/public/meal-img.jpg") no-repeat;
+  background: url("http://localhost:3000/src/client/assets/images/meal-img.png")
+    no-repeat;
   background-size: cover;
   height: 700px;
   color: white;

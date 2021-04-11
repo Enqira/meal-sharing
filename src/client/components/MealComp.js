@@ -40,7 +40,7 @@ export default function MealComp({ meal, reservations }) {
       <div className="img-container">
         <img
           className="meal-img"
-          src="/public/meal-plate.jpg"
+          src="/src/client/assets/images/meal-plate.png"
           alt="meal image"
         />
       </div>
