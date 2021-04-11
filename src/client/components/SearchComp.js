@@ -1,8 +1,8 @@
 import React, { useState, useRef } from "react"
 import { useForm } from "react-hook-form"
 
-const API_MEALS = `http://localhost:5000/api/meals`
-const API_SEARCH = "http://localhost:5000/api/search/"
+const API_MEALS = `/api/meals`
+const API_SEARCH = "/api/search/"
 
 export default function SearchComp({
   meals,
