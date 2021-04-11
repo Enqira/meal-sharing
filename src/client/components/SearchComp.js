@@ -32,7 +32,6 @@ export default function SearchComp({
   }
 
   const onSubmit = () => {
-    console.log("submited")
     event.preventDefault()
   }
 

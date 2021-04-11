@@ -31,15 +31,18 @@ export default function MealComp({ meal, reservations }) {
   useEffect(() => {
     //  show or not the reserve button depending on these conditions
     if (availableSeats === "Fully booked" || isActive === false) {
-      console.log("if statement")
       setReserve(false)
     }
   }, [])
 
   return (
-    <div className="meal-comtainer">
+    <div className="meal-container">
       <div className="img-container">
-        <img className="meal-img" src="/public/meal-img.jpg" alt="meal image" />
+        <img
+          className="meal-img"
+          src="/public/meal-plate.jpg"
+          alt="meal image"
+        />
       </div>
       <div className="meal-info-container">
         <div className="meal-info-upper">
@@ -76,10 +79,10 @@ export default function MealComp({ meal, reservations }) {
         <div>
           {reserve ? (
             <Link to={`/meals/${meal.id}`}>
-              <button>reserve</button>
+              <button className="small-btn white-btn">reserve</button>
             </Link>
           ) : (
-            <button>cannot reserve</button>
+            <button className="small-btn white-btn">cannot reserve</button>
           )}
         </div>
       </div>

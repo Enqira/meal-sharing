@@ -1,6 +1,8 @@
-.meal-comtainer {
+.meal-container {
   overflow: hidden;
-  background: #141621;
+  /* background: #141621; */
+  background: #212b3d;
+
   margin: 20px 20px 40px 20px;
   height: 250px;
   border-radius: 5px;

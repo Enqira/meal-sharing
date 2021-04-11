@@ -53,6 +53,7 @@ export default function KnowMoreComp({ meals, loading, inputRef }) {
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s
         </p>
+
         <div className="know-more-content-div">
           <div>
             <h3>Become a host</h3>
@@ -65,10 +66,12 @@ export default function KnowMoreComp({ meals, loading, inputRef }) {
               electronic typesetting,
             </p>
             <Link to={`/meals/`}>
-              <button>Add meal</button>
+              <button className="small-btn white-btn">Add meal</button>
             </Link>
           </div>
-          <img className="img" src="/public/meal-img.jpg" alt="host image" />
+          <div className="img-container img-container-small">
+            <img className="img" src="/public/host.jpg" alt="host image" />
+          </div>
         </div>
 
         <div className="know-more-content-div">
@@ -82,11 +85,13 @@ export default function KnowMoreComp({ meals, loading, inputRef }) {
               survived not only five centuries, but also the leap into
               electronic typesetting,
             </p>
-            {/* <Link to={`/meals/`}> */}
-            <button onClick={handleClickFM}>Find a meal</button>
-            {/* </Link> */}
+            <button className="small-btn white-btn" onClick={handleClickFM}>
+              Find a meal
+            </button>
           </div>
-          <img className="img" src="/public/meal-img.jpg" alt="host image" />
+          <div className="img-container img-container-small">
+            <img className="img" src="/public/visitor.jpg" alt="host image" />
+          </div>
         </div>
       </div>
     </section>
