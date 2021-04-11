@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
+import mealPlate from "../assets/images/meal-plate.png"
 
 export default function MealComp({ meal, reservations }) {
   const [reserve, setReserve] = useState(true)
@@ -38,11 +39,7 @@ export default function MealComp({ meal, reservations }) {
   return (
     <div className="meal-container">
       <div className="img-container">
-        <img
-          className="meal-img"
-          src="/src/client/assets/images/meal-plate.png"
-          alt="meal image"
-        />
+        <img className="meal-img" src={mealPlate} alt="meal image" />
       </div>
       <div className="meal-info-container">
         <div className="meal-info-upper">
