@@ -72,7 +72,7 @@ export default function KnowMoreComp({ meals, loading, inputRef }) {
           <div className="img-container img-container-small">
             <img
               className="img"
-              src="http://localhost:3000/src/client/assets/images/host.png"
+              src="/src/client/assets/images/host.png"
               alt="host image"
             />
           </div>
@@ -96,7 +96,7 @@ export default function KnowMoreComp({ meals, loading, inputRef }) {
           <div className="img-container img-container-small">
             <img
               className="img"
-              src="http://localhost:3000/src/client/assets/images/visitor.png"
+              src="/src/client/assets/images/visitor.png"
               alt="host image"
             />
           </div>
