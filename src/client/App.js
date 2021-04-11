@@ -26,8 +26,8 @@ function App() {
   const inputRef = useRef()
 
   useEffect(() => {
-    const mealCall = fetch("http://localhost:5000/api/meals")
-    const reservCall = fetch(`http://localhost:5000/api/reservations`)
+    const mealCall = fetch("/api/meals")
+    const reservCall = fetch(`/api/reservations`)
     Promise.all([mealCall, reservCall])
       .then(res => Promise.all(res.map(res => res.json())))
       .then(data => {

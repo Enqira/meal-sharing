@@ -12,7 +12,7 @@ export default function MealFormComp({ formState, setFormState, addMealRef }) {
   const onSubmit = data => {
     const config = { headers: { "Content-Type": "multipart/form-data" } }
     axios
-      .post("http://localhost:5000/api/meals", data)
+      .post("/api/meals", data)
       .then(response => {
         console.log(response.status)
       })
