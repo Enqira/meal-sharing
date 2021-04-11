@@ -16,7 +16,7 @@ export default function ReservComp({ meals, reservations }) {
     data.id = matchedMeal.id
     const config = { headers: { "Content-Type": "multipart/form-data" } }
     axios
-      .post("http://localhost:5000/api/reservations", data)
+      .post("/api/reservations", data)
       .then(response => console.log(response.status))
       .catch(err => console.log(err))
     e.target.reset()
