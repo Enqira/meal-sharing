@@ -70,7 +70,11 @@ export default function KnowMoreComp({ meals, loading, inputRef }) {
             </Link>
           </div>
           <div className="img-container img-container-small">
-            <img className="img" src="/public/host.jpg" alt="host image" />
+            <img
+              className="img"
+              src="/src/client/assets/images/host.png"
+              alt="host image"
+            />
           </div>
         </div>
 
@@ -90,7 +94,11 @@ export default function KnowMoreComp({ meals, loading, inputRef }) {
             </button>
           </div>
           <div className="img-container img-container-small">
-            <img className="img" src="/public/visitor.jpg" alt="host image" />
+            <img
+              className="img"
+              src="/src/client/assets/images/visitor.png"
+              alt="host image"
+            />
           </div>
         </div>
       </div>
