@@ -29,10 +29,6 @@ ul {
 a {
   text-decoration: none;
 }
-p,
-label {
-  font-size: 15 px;
-}
 
 .submit-btn {
   background: #212b3d;
@@ -89,9 +85,8 @@ menu,
   font-family: "Kaushan Script", cursive;
   color: white;
   font-weight: 400;
-  /* background: #141621; */
   background: #212b3d;
-  border-radius: 20px 5px 20px 5px;
+  border-radius: 27px 8px 27px 8px;
   padding: 2px 25px 2px 25px;
   -webkit-box-shadow: 0 0 10px 0 white;
   box-shadow: 0 0 10px 0 white;
@@ -116,18 +111,24 @@ menu,
 
 @keyframes arrow-ani {
   from {
-    color: black;
+    border-left: 14px solid #555;
   }
   to {
-    color: rgba(255, 0, 0, 0.5);
+    border-left: 14px solid rgba(255, 0, 0, 0.657);
   }
 }
 .arrow {
+  margin-top: 15px;
   color: black;
   font-size: 34px;
   animation-name: arrow-ani;
   animation-duration: 1s;
   animation-iteration-count: infinite;
+  width: 0;
+  height: 0;
+  border-top: 14px solid transparent;
+  border-left: 14px solid #555;
+  border-bottom: 14px solid transparent;
 }
 .arrow:hover {
   animation: none;
@@ -171,9 +172,6 @@ menu,
   }
 }
 
-.know-more-content div {
-  text-align: center;
-}
 .know-more-title {
   cursor: pointer;
   margin-bottom: -5px;
@@ -182,6 +180,7 @@ menu,
   color: rgba(255, 0, 0, 0.8);
 }
 .know-more-content-div {
+  text-align: center;
   display: flex;
   margin: 5px 10px 15px 10px;
 }
@@ -202,16 +201,6 @@ menu,
   box-shadow: 0 0 10px -2px white;
 }
 
-.img-container {
-  width: 250px;
-  min-width: 250px;
-  overflow: hidden;
-  align-self: center;
-}
-.img-container img {
-  border-radius: 8px;
-  height: 255px;
-}
 .img-container-small {
   min-width: 220px;
 }
@@ -337,16 +326,8 @@ textarea {
     height: 92vh;
   }
 }
-@media (max-width: 660px) {
-  .menu {
-    display: inline-flex;
-  }
-}
 
 @media (max-width: 650px) {
-  #root {
-    overflow: hidden;
-  }
   .menu {
     display: none;
     flex-direction: column;
@@ -357,5 +338,17 @@ textarea {
     height: 70%;
     background-color: #212b3d;
     z-index: 50;
+  }
+  .know-more-content-title {
+    width: 100%;
+  }
+  .know-more-content-div {
+    margin: 0;
+    flex-direction: column-reverse;
+    margin: 10px 0 15px 0;
+  }
+  .know-more-content-div p {
+    margin-left: 0;
+    margin-right: 0;
   }
 }

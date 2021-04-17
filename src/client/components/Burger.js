@@ -22,6 +22,7 @@ export default function Burger({ menuRef }) {
       secondLineRef.current.style.transform = "translateX(0)"
     }
   }
+  //   function and eventlistener to change display of menu depending of screen size
   const updateSize = () => {
     let mql = window.matchMedia("(min-width: 650px)")
     mql.matches
