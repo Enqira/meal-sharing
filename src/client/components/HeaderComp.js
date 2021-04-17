@@ -1,12 +1,17 @@
-import React from "react"
+import React, { useState, useRef } from "react"
 import { Link } from "react-router-dom"
+import Burger from "./Burger"
 
 export default function HeaderComp({ topRef }) {
+  const [open, setOpen] = useState(false)
+  const menuRef = useRef()
+
   return (
     <header className="header-component" ref={topRef}>
       <div className="header-upper">
         <span className="logo">invita</span>
-        <ul className="menu">
+        <Burger menuRef={menuRef} />
+        <ul className="menu" ref={menuRef}>
           <Link to={"/"}>
             <li>Home </li>
           </Link>
