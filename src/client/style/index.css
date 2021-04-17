@@ -201,10 +201,7 @@ menu,
   -webkit-box-shadow: 0 0 10px -1 px white;
   box-shadow: 0 0 10px -2px white;
 }
-/* .know-more-content img {
-  width: 250px;
-  border-radius: 4px;
-} */
+
 .img-container {
   width: 250px;
   min-width: 250px;
@@ -328,7 +325,7 @@ textarea {
   color: white;
   background-color: #212b3d;
 }
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 650px) {
   #root {
     padding-left: 0;
     padding-right: 0;
@@ -338,5 +335,27 @@ textarea {
 @media (min-width: 1440px) {
   .header-component {
     height: 92vh;
+  }
+}
+@media (max-width: 660px) {
+  .menu {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 650px) {
+  #root {
+    overflow: hidden;
+  }
+  .menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: fixed;
+    right: 0;
+    width: 70%;
+    height: 70%;
+    background-color: #212b3d;
+    z-index: 50;
   }
 }
