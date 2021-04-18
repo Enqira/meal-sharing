@@ -328,6 +328,9 @@ textarea {
 }
 
 @media (max-width: 650px) {
+  .header-component {
+    height: 50%;
+  }
   .menu {
     display: none;
     flex-direction: column;

@@ -90,8 +90,13 @@
       font-size: 0;
     }
     to {
-      font-size: 60px;
+      font-size: 32px;
       animation-delay: 10s;
     }
+  }
+  .luminance-top {
+    margin-top: 15px;
+    border-radius: 27px 8px 27px 8px;
+    padding: 2px 25px 2px 25px;
   }
 }
