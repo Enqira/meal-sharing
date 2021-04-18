@@ -1,8 +1,6 @@
 .meal-container {
   overflow: hidden;
-  /* background: #141621; */
   background: #212b3d;
-
   margin: 20px 20px 40px 20px;
   height: 250px;
   border-radius: 5px;
@@ -28,9 +26,9 @@
   color: white;
 }
 .img-container {
-  width: 250px;
+  /* width: 250px;
   min-width: 250px;
-  overflow: hidden;
+  overflow: hidden; */
   align-self: center;
 }
 .meal-img {
@@ -73,10 +71,30 @@
   font-size: 14px;
   justify-content: space-between;
   align-items: center;
+  color: white;
 }
 
 .meal-info-lower p {
-  color: white;
-
   margin: 5px;
+}
+@media (max-width: 650px) {
+  .meal-container {
+    flex-direction: column;
+    height: auto;
+    margin: 10px 0 20px 0;
+  }
+  .img-container {
+    margin-top: 10px;
+  }
+  .meal-img {
+    border-radius: 8px;
+    max-width: 200px;
+    max-height: 200px;
+  }
+  .meal-info-lower {
+    display: block;
+  }
+  footer {
+    font-size: 16px;
+  }
 }

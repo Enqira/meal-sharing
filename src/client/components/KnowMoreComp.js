@@ -43,9 +43,7 @@ export default function KnowMoreComp({ meals, loading, inputRef }) {
             className="arrow"
             onClick={handleArrowClick}
             style={{ transform: arrowTransform }}
-          >
-            ⮞
-          </div>
+          ></div>
         </div>
       </div>
       <ColoredLine color={"#141621"} />

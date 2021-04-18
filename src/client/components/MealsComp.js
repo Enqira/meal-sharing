@@ -101,7 +101,6 @@ export default function MealsComp({
           </label>
         </form>
       </div>
-      {/* if not loading display meals */}
       {!loading ? (
         <div className="meals">
           {sort(newMeals).map(meal => (
@@ -119,9 +118,11 @@ export default function MealsComp({
       )}
       <div className="go-top">
         <div className="arrow-container">
-          <div className="arrow" id="arrow-bottom" onClick={handleArrowClick}>
-            ⮞
-          </div>
+          <div
+            className="arrow"
+            id="arrow-bottom"
+            onClick={handleArrowClick}
+          ></div>
         </div>
         <h3 className="go-top-text" onClick={handleArrowClick}>
           Go to the top!
@@ -129,8 +130,4 @@ export default function MealsComp({
       </div>
     </section>
   )
-}
-
-{
-  /* <MealComp meal={meal} key={meal.id} reservations={reservations} /> */
 }

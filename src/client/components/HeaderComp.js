@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import Burger from "./Burger"
 
 export default function HeaderComp({ topRef }) {
+  // state to know if nav is open or closed
   const [open, setOpen] = useState(false)
   const menuRef = useRef()
 

@@ -14,6 +14,8 @@ import MealsComp from "./components/MealsComp"
 import MealFormComp from "./components/MealFormComp"
 import SearchComp from "./components/SearchComp"
 import BackHomeComp from "./components/BackHomeComp"
+import ContactComp from "./components/ContactComp"
+import AboutComp from "./components/AboutComp"
 
 function App() {
   const [meals, setMeals] = useState([])
@@ -21,6 +23,7 @@ function App() {
   const [formState, setFormState] = useState(true)
   const [reservations, setReservations] = useState([])
   const [result, setResult] = useState(true)
+  //   refs to be used in arrow click to move view to desired tag
   const topRef = useRef()
   const addMealRef = useRef()
   const inputRef = useRef()
@@ -31,7 +34,6 @@ function App() {
     Promise.all([mealCall, reservCall])
       .then(res => Promise.all(res.map(res => res.json())))
       .then(data => {
-        console.log(data)
         setMeals(data[0])
         setReservations(data[1])
       })
@@ -85,6 +87,16 @@ function App() {
             result={result}
             addMealRef={addMealRef}
           />
+        </Route>
+        <Route exact path="/contact">
+          <BackHomeComp />
+          <ContactComp />
+          <FooterComp />
+        </Route>
+        <Route exact path="/about">
+          <BackHomeComp />
+          <AboutComp />
+          <FooterComp />
         </Route>
         <Route exact path="/test-component">
           <TestComponent></TestComponent>
