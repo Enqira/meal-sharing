@@ -37,7 +37,7 @@ export default function ReservComp({ meals, reservations }) {
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className="reservForm">
-          <label>Name</label>
+          <label>Name*</label>
           <input
             type="text"
             name="name"
@@ -45,7 +45,7 @@ export default function ReservComp({ meals, reservations }) {
             ref={register}
             required
           />
-          <label>Email</label>
+          <label>Email*</label>
           <input
             type="email"
             name="email"
@@ -53,7 +53,7 @@ export default function ReservComp({ meals, reservations }) {
             ref={register}
             required
           />
-          <label>Phone</label>
+          <label>Phone*</label>
           <input
             type="number"
             name="phone"
@@ -61,7 +61,7 @@ export default function ReservComp({ meals, reservations }) {
             ref={register}
             required
           />
-          <label>Number of guests</label>
+          <label>Number of guests*</label>
           <input
             type="number"
             name="guests"
@@ -70,6 +70,9 @@ export default function ReservComp({ meals, reservations }) {
             required
           />
           <input className="submit-btn" type="submit" />
+          <br />
+          <label>(*) required field.</label>
+          <label>Note: submited information will be stored in database!</label>
         </form>
         <p style={{ display: display }} className="reservSubmitLabel">
           Meal reserved succesfully!
