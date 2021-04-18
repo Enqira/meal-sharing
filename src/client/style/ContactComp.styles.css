@@ -9,7 +9,14 @@
   width: 500px;
   min-height: 400px;
   padding: 20px;
+  -webkit-box-shadow: 0px 0px 10px 0px black;
+  box-shadow: 0px 0px 10px 0px black;
 }
 a {
   color: #fff;
+}
+@media (max-width: 650px) {
+  .container div {
+    width: 95%;
+  }
 }
