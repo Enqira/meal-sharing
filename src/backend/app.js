@@ -9,7 +9,7 @@ const reviewsRouter = require("./api/reviews")
 const searchRouter = require("./api/search")
 
 const buildPath = path.join(__dirname, "../../dist")
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3002
 const cors = require("cors")
 
 // For week4 no need to look into this!
