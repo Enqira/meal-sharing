@@ -4,10 +4,11 @@
   animation: reveal 2000ms ease-in-out forwards 500ms, glow 2000ms linear 2000ms;
   margin-top: 90px;
   align-self: center;
-  background: #212b3d;
+  background: #ae0f3f;
   border-radius: 50px 10px 50px 10px;
   padding: 0 70px 0 70px;
   font-family: "Kaushan Script", cursive;
+  width: fit-content;
 }
 
 @keyframes reveal {
@@ -40,22 +41,23 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 70vw;
+}
+.luminance-container {
+  max-width: 800px;
 }
 .luminance-bot {
-  font-size: 18px;
   opacity: 0;
   animation-name: text-reveal;
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-delay: 2.2s;
-  border-radius: 2px;
   margin-top: 15px;
+  margin-left: 3vw;
   padding: 0 10px 0 10px;
-  color: black;
 }
-.luminance-bot {
-  background-color: white;
+.luminance-bot p {
+  font-size: 2.5rem;
+  text-align: left;
 }
 
 @keyframes text-reveal {

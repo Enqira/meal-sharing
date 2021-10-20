@@ -1,6 +1,6 @@
 footer {
-  background: #212b3d;
-  color: white;
+  background: #c13f68;
+  color: --black;
   display: flex;
   justify-content: space-around;
   width: 100vw;

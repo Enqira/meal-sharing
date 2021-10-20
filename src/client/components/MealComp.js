@@ -1,40 +1,40 @@
-import React, { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
-import mealPlate from "../assets/images/meal-plate.png"
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import mealPlate from "../assets/images/meal-plate.png";
 
 export default function MealComp({ meal, reservations }) {
-  const [reserve, setReserve] = useState(true)
+  const [reserve, setReserve] = useState(true);
   //format date
-  let date = new Date(meal.when)
-  date = date.toString().split(" ").slice(0, 5).join(" ")
-  date = date.split(":").slice(0, 2).join(":")
+  let date = new Date(meal.when);
+  date = date.toString().split(" ").slice(0, 5).join(" ");
+  date = date.split(":").slice(0, 2).join(":");
 
   //   get reservations info for this meal
-  const maxReservations = meal.max_reservations
-  let reserved = 0
-  reservations.map(reservation => {
+  const maxReservations = meal.max_reservations;
+  let reserved = 0;
+  reservations.map((reservation) => {
     if (reservation.meal_id === meal.id) {
-      reserved += reservation.number_of_guests
+      reserved += reservation.number_of_guests;
     }
-  })
-  let availableSeats = maxReservations - reserved
+  });
+  let availableSeats = maxReservations - reserved;
   if (availableSeats <= 0) {
-    availableSeats = "Fully booked"
+    availableSeats = "Fully booked";
   }
 
   //   get status depending on date
-  let isActive = true
-  let mealDate = new Date(meal.when)
-  mealDate = mealDate.getTime()
-  const currentTime = Date.now()
-  if (currentTime >= mealDate) isActive = false
+  let isActive = true;
+  let mealDate = new Date(meal.when);
+  mealDate = mealDate.getTime();
+  const currentTime = Date.now();
+  if (currentTime >= mealDate) isActive = false;
 
   useEffect(() => {
     //  show or not the reserve button depending on these conditions
     if (availableSeats === "Fully booked" || isActive === false) {
-      setReserve(false)
+      setReserve(false);
     }
-  }, [])
+  }, []);
 
   return (
     <div className="meal-container">
@@ -79,10 +79,10 @@ export default function MealComp({ meal, reservations }) {
               <button className="small-btn white-btn">reserve</button>
             </Link>
           ) : (
-            <button className="small-btn white-btn">cannot reserve</button>
+            <button className="small-btn white-btn">Sold out</button>
           )}
         </div>
       </div>
     </div>
-  )
+  );
 }

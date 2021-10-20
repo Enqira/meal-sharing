@@ -1,22 +1,22 @@
-import React, { useState, useEffect, useRef } from "react"
-import { Link } from "react-router-dom"
-import visitor from "../assets/images/visitor.png"
-import host from "../assets/images/host.png"
+import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+import visitor from "../assets/images/visitor.png";
+import host from "../assets/images/host.png";
 
 export default function KnowMoreComp({ meals, loading, inputRef }) {
-  const [display, setDisplay] = useState("none")
-  const [arrowTransform, setArrowTransform] = useState("rotate(90deg)")
-  const ref = useRef()
+  const [display, setDisplay] = useState("none");
+  const [arrowTransform, setArrowTransform] = useState("rotate(90deg)");
+  const ref = useRef();
   const handleArrowClick = () => {
     if (display === "none") {
-      setArrowTransform("rotate(-90deg)")
-      setDisplay("flex")
-      ref.current.scrollIntoView({ behavior: "smooth" })
+      setArrowTransform("rotate(-90deg)");
+      setDisplay("flex");
+      ref.current.scrollIntoView({ behavior: "smooth" });
     } else {
-      setArrowTransform("rotate(90deg)")
-      setDisplay("none")
+      setArrowTransform("rotate(90deg)");
+      setDisplay("none");
     }
-  }
+  };
   const ColoredLine = ({ color }) => (
     <hr
       style={{
@@ -24,13 +24,13 @@ export default function KnowMoreComp({ meals, loading, inputRef }) {
         backgroundColor: color,
         height: 1,
         width: 1920,
-        opacity: 0.2
+        opacity: 0.2,
       }}
     />
-  )
+  );
   const handleClickFM = () => {
-    inputRef.current.scrollIntoView({ behavior: "smooth" })
-  }
+    inputRef.current.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <section className="know-more-container" ref={ref}>
@@ -48,15 +48,9 @@ export default function KnowMoreComp({ meals, loading, inputRef }) {
       </div>
       <ColoredLine color={"#141621"} />
       <div className="know-more-content" style={{ display: display }}>
-        <p className="know-more-content-title">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s
-        </p>
-
         <div className="know-more-content-div">
           <div>
-            <h3>Become a host</h3>
+            <h2>Become a host</h2>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
@@ -66,7 +60,7 @@ export default function KnowMoreComp({ meals, loading, inputRef }) {
               electronic typesetting,
             </p>
             <Link to={`/meals/`}>
-              <button className="small-btn white-btn">Add meal</button>
+              <button className="btn">Add meal</button>
             </Link>
           </div>
           <div className="img-container img-container-small">
@@ -76,7 +70,7 @@ export default function KnowMoreComp({ meals, loading, inputRef }) {
 
         <div className="know-more-content-div">
           <div>
-            <h3>Attend meal events!</h3>
+            <h2>Attend meal events!</h2>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
@@ -85,7 +79,7 @@ export default function KnowMoreComp({ meals, loading, inputRef }) {
               survived not only five centuries, but also the leap into
               electronic typesetting,
             </p>
-            <button className="small-btn white-btn" onClick={handleClickFM}>
+            <button className="btn" onClick={handleClickFM}>
               Find a meal
             </button>
           </div>
@@ -95,5 +89,5 @@ export default function KnowMoreComp({ meals, loading, inputRef }) {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -14,10 +14,8 @@
 
 body {
   margin: 0;
-  font-size: 17px;
   background-color: white;
   color: black;
-  font-weight: 200;
 }
 
 ul {
@@ -28,6 +26,21 @@ ul {
 
 a {
   text-decoration: none;
+}
+h1 {
+  font-size: 2rem;
+}
+
+.btn {
+  width: 200px;
+  background-color: white;
+  height: 48px;
+  border-radius: 100px;
+  border-width: 0;
+  align-self: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 
 .submit-btn {
@@ -54,7 +67,7 @@ button:hover,
 }
 
 .header-component {
-  background: url("/src/client/assets/images/meal-img.png") no-repeat;
+  background: url("/src/client/assets/images/meal-img.jpg") no-repeat;
   background-size: cover;
   height: 700px;
   color: white;
@@ -65,31 +78,30 @@ button:hover,
   display: flex;
   justify-content: space-between;
   max-width: 1900px;
+  background-color: #c24068;
 }
 
 .menu {
   display: inline-flex;
+  align-items: center;
 }
 
 .menu li {
-  margin: 20px;
+  margin-right: 25px;
   color: white;
 }
 
-menu,
-.logo {
-  margin: 20px;
-}
 .logo {
   font-size: 30px;
   font-family: "Kaushan Script", cursive;
   color: white;
   font-weight: 400;
-  background: #212b3d;
+  background: #ae0f3f;
   border-radius: 27px 8px 27px 8px;
   padding: 2px 25px 2px 25px;
   -webkit-box-shadow: 0 0 10px 0 white;
   box-shadow: 0 0 10px 0 white;
+  margin: 10px 20px;
 }
 .know-more-container {
   display: flex;
@@ -147,20 +159,15 @@ menu,
 }
 
 .know-more-content {
-  width: 95%;
   display: flex;
   flex-direction: column;
-  margin: 10px;
-  background: #212b3d;
-  color: white;
-  border-radius: 5px;
-  -webkit-box-shadow: 0 0 10px 0 black;
-  box-shadow: 0 0 10px 0 black;
-  padding: 5px 20px 0 20px;
-  max-width: 1900px;
+  background: #c13f68;
   position: relative;
   animation-name: appear;
   animation-duration: 0.5s;
+  align-items: center;
+  margin: 30px 0;
+  padding: 30px;
 }
 @keyframes appear {
   0% {
@@ -182,30 +189,25 @@ menu,
 .know-more-content-div {
   text-align: center;
   display: flex;
-  margin: 5px 10px 15px 10px;
+  align-items: center;
+  max-width: 1900px;
+  margin: 30px 0;
+}
+.know-more-content-div div {
+  width: 50%;
 }
 
 .know-more-content-div p {
   margin-left: 20px;
-  margin-right: 20px;
+  font-size: 1.8rem;
+  text-align: left;
 }
-.know-more-content-title {
-  padding: 15px;
-  width: 60%;
-  align-self: center;
-  text-align: center;
-  color: white;
-  margin: 15px;
-  border-radius: 8px;
-  -webkit-box-shadow: 0 0 10px -1 px white;
-  box-shadow: 0 0 10px -2px white;
+.know-more-content-div h2 {
+  font-size: 2.2rem;
 }
 
-.img-container-small {
-  min-width: 220px;
-}
 .img-container-small .img {
-  height: 220px;
+  width: 500px;
 }
 /* ------------------------ */
 .form-container {
@@ -300,7 +302,7 @@ textarea {
 .small-btn {
   width: 140px;
   margin: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   border-radius: 2px;
   border-width: 0;
   font-weight: 295;
@@ -308,18 +310,12 @@ textarea {
   font-size: 16px;
 }
 .white-btn {
-  color: #212b3d;
+  color: black;
   background-color: white;
 }
 .dark-btn {
   color: white;
-  background-color: #212b3d;
-}
-@media screen and (max-width: 650px) {
-  #root {
-    padding-left: 0;
-    padding-right: 0;
-  }
+  background-color: #c24067;
 }
 
 @media (min-width: 1440px) {
@@ -328,7 +324,40 @@ textarea {
   }
 }
 
+@media (max-width: 1080px) {
+  .know-more-content {
+    padding: 5px;
+  }
+  .know-more-content-div p {
+    font-size: 1.2rem;
+  }
+  .know-more-content-div h2 {
+    font-size: 1.5rem;
+  }
+  .img-container-small .img {
+    width: 400px;
+  }
+}
+@media (max-width: 850px) {
+  .know-more-content {
+    padding: 5px;
+  }
+  .know-more-content-div p {
+    font-size: 1.2rem;
+  }
+  .know-more-content-div h2 {
+    font-size: 1.5rem;
+  }
+  .img-container-small .img {
+    width: 300px;
+  }
+}
+
 @media (max-width: 650px) {
+  #root {
+    padding-left: 0;
+    padding-right: 0;
+  }
   .header-component {
     height: 50%;
   }
@@ -340,8 +369,9 @@ textarea {
     right: 0;
     width: 70%;
     height: 70%;
-    background-color: #212b3d;
+    background-color: #ad0f3f;
     z-index: 50;
+    border-radius: 0 0 0 10px;
   }
   .know-more-content-title {
     width: 100%;
@@ -351,8 +381,23 @@ textarea {
     flex-direction: column-reverse;
     margin: 10px 0 15px 0;
   }
+  .know-more-content {
+    padding: 5px;
+  }
+  .know-more-content-div div {
+    width: 95%;
+  }
   .know-more-content-div p {
-    margin-left: 0;
-    margin-right: 0;
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  .know-more-content-div h2 {
+    font-size: 1.5rem;
+  }
+  .img-container-small .img {
+    width: 60vw;
+  }
+  .luminance-bot p {
+    font-size: 1.1rem !important  ;
   }
 }

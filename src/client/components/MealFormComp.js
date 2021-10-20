@@ -1,28 +1,28 @@
-import React, { useState } from "react"
-import { useForm } from "react-hook-form"
-const axios = require("axios")
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+const axios = require("axios");
 
 export default function MealFormComp({ formState, setFormState, addMealRef }) {
-  const { register, handleSubmit } = useForm("")
+  const { register, handleSubmit } = useForm("");
 
   const handleStyle = () => {
-    formState ? setFormState(false) : setFormState(true)
-  }
+    formState ? setFormState(false) : setFormState(true);
+  };
 
-  const onSubmit = data => {
-    const config = { headers: { "Content-Type": "multipart/form-data" } }
+  const onSubmit = (data) => {
+    const config = { headers: { "Content-Type": "multipart/form-data" } };
     axios
       .post("/api/meals", data)
-      .then(response => {
-        console.log(response.status)
+      .then((response) => {
+        console.log(response.status);
       })
-      .catch(err => console.log(err))
-  }
+      .catch((err) => console.log(err));
+  };
 
   return (
     <div className="form-container" ref={addMealRef}>
       <h4>Become a host, add a meal now.</h4>
-      <button className="small-btn dark-btn" onClick={() => handleStyle()}>
+      <button className="btn dark-btn" onClick={() => handleStyle()}>
         {formState ? "Add meal" : "Cancel"}
       </button>
       <form
@@ -30,7 +30,6 @@ export default function MealFormComp({ formState, setFormState, addMealRef }) {
         className="mealForm"
         style={{ display: formState ? "none" : "flex" }}
       >
-        {/* <label>Add a new meal</label> */}
         <label>title*</label>
         <input
           type="text"
@@ -85,5 +84,5 @@ export default function MealFormComp({ formState, setFormState, addMealRef }) {
         <label>Note: submited information will be stored in database!</label>
       </form>
     </div>
-  )
+  );
 }

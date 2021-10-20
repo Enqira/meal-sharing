@@ -1,11 +1,14 @@
-import React from "react"
-import "../style/ContactComp.styles.css"
+import React from "react";
+import "../style/ContactComp.styles.css";
 
 export default function ContactComp() {
   return (
     <div className="container">
       <div>
         <h3>Contact info :</h3>
+        <p>
+          Portfolio: <a href="https://www.enqira.com">enqira.com</a>
+        </p>
         <p>
           Linkedin:{" "}
           <a href="https://www.linkedin.com/in/enqira/">
@@ -24,5 +27,5 @@ export default function ContactComp() {
         </p>
       </div>
     </div>
-  )
+  );
 }

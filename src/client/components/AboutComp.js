@@ -1,12 +1,12 @@
-import React from "react"
-import "../style/ContactComp.styles.css"
+import React from "react";
+import "../style/ContactComp.styles.css";
 
 export default function AboutComp() {
   return (
     <div className="container">
       <div>
         <h3>About :</h3>
-        <p>This web app was part of Hack Your Future final personal project.</p>
+        <p>This web app was part of a Hack Your Future personal project.</p>
         <p>
           Main used technologies: NodeJS, React, MySQL, Javascript, HTML and
           CSS.
@@ -30,5 +30,5 @@ export default function AboutComp() {
         </p>
       </div>
     </div>
-  )
+  );
 }
