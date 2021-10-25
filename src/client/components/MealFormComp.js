@@ -3,10 +3,12 @@ import { useForm } from "react-hook-form";
 const axios = require("axios");
 
 export default function MealFormComp({ formState, setFormState, addMealRef }) {
-  const { register, handleSubmit } = useForm("");
+  const { register, handleSubmit, reset } = useForm("");
+  const [mealAdded, setMealAdded] = useState(false);
 
   const handleStyle = () => {
     formState ? setFormState(false) : setFormState(true);
+    setMealAdded(false);
   };
 
   const onSubmit = (data) => {
@@ -15,6 +17,9 @@ export default function MealFormComp({ formState, setFormState, addMealRef }) {
       .post("/api/meals", data)
       .then((response) => {
         console.log(response.status);
+        handleStyle();
+        setMealAdded(true);
+        reset({});
       })
       .catch((err) => console.log(err));
   };
@@ -30,59 +35,24 @@ export default function MealFormComp({ formState, setFormState, addMealRef }) {
         className="mealForm"
         style={{ display: formState ? "none" : "flex" }}
       >
-        <label>title*</label>
-        <input
-          type="text"
-          name="title"
-          placeholder="title"
-          ref={register}
-          required
-        />
-        <label>description*</label>
-        <textarea
-          type="text"
-          name="description"
-          placeholder="description"
-          ref={register}
-          required
-        />
-        <label>location*</label>
-        <input
-          type="text"
-          name="location"
-          placeholder="location"
-          ref={register}
-          required
-        />
-        <label>when*</label>
-        <input
-          type="date"
-          name="when"
-          placeholder="when"
-          ref={register}
-          required
-        />
-        <label>price*</label>
-        <input
-          type="number"
-          name="price"
-          placeholder="price"
-          ref={register}
-          required
-        />
-        <label>max reservations*</label>
-        <input
-          type="number"
-          name="max_reservations"
-          placeholder="max reservations"
-          ref={register}
-          required
-        />
-        <input type="submit" className="submit-btn" />
+        <label>Title*</label>
+        <input type="text" name="title" ref={register} required />
+        <label>Description*</label>
+        <textarea type="text" name="description" ref={register} required />
+        <label>Location*</label>
+        <input type="text" name="location" ref={register} required />
+        <label>Date*</label>
+        <input type="date" name="when" ref={register} required />
+        <label>Price*</label>
+        <input type="number" name="price" ref={register} required />
+        <label>Max reservations*</label>
+        <input type="number" name="max_reservations" ref={register} required />
+        <input type="submit" className="submit-btn btn" />
         <br />
         <label>(*) required field.</label>
         <label>Note: submited information will be stored in database!</label>
       </form>
+      {mealAdded && <p>Congratulations, meal added successfully!</p>}
     </div>
   );
 }

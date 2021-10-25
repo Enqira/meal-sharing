@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from "react"
-import { Link } from "react-router-dom"
-import MealComp from "./MealComp"
+import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+import MealComp from "./MealComp";
 
 export default function MealsComp({
   meals,
@@ -8,37 +8,37 @@ export default function MealsComp({
   reservations,
   result,
   topRef,
-  addMealRef
+  addMealRef,
 }) {
-  const [showOption, setShowOption] = useState("all")
-  const [sortOption, setSortOption] = useState("latest")
-  const [newMeals, setNewMeals] = useState(meals)
+  const [showOption, setShowOption] = useState("all");
+  const [sortOption, setSortOption] = useState("latest");
+  const [newMeals, setNewMeals] = useState(meals);
 
-  const handleShowChange = e => {
-    setShowOption(e.target.value)
-  }
-  const handleSortChange = e => {
-    setSortOption(e.target.value)
-  }
+  const handleShowChange = (e) => {
+    setShowOption(e.target.value);
+  };
+  const handleSortChange = (e) => {
+    setSortOption(e.target.value);
+  };
 
-  const sort = array => {
+  const sort = (array) => {
     switch (sortOption) {
       case "lower-price":
-        return array.sort((a, b) => a.price - b.price)
+        return array.sort((a, b) => a.price - b.price);
       case "higher-price":
-        return array.sort((a, b) => b.price - a.price)
+        return array.sort((a, b) => b.price - a.price);
       case "oldest":
         return array.sort(
           (a, b) => new Date(a.created_date) - new Date(b.created_date)
-        )
+        );
       default:
         return array.sort(
           (a, b) => new Date(b.created_date) - new Date(a.created_date)
-        )
+        );
     }
-  }
+  };
   useEffect(() => {
-    const currentTime = Date.now()
+    const currentTime = Date.now();
 
     if (!loading) {
       //   -----------------------
@@ -48,31 +48,31 @@ export default function MealsComp({
       switch (showOption) {
         case "upcoming":
           const upcomingMeals = meals.filter(
-            meal => Date.parse(meal.when) > currentTime
-          )
+            (meal) => Date.parse(meal.when) > currentTime
+          );
 
-          setNewMeals(upcomingMeals)
-          break
+          setNewMeals(upcomingMeals);
+          break;
         case "ended":
           const endedMeals = meals.filter(
-            meal => Date.parse(meal.when) < currentTime
-          )
-          setNewMeals(endedMeals)
-          break
+            (meal) => Date.parse(meal.when) < currentTime
+          );
+          setNewMeals(endedMeals);
+          break;
         case "all":
-          setNewMeals(meals)
-          break
+          setNewMeals(meals);
+          break;
       }
       //   ------------------------------
     }
-  }, [showOption, loading, meals, sortOption, result])
+  }, [showOption, loading, meals, sortOption, result]);
 
   //   for go top arrow
 
   const handleArrowClick = () => {
-    addMealRef && addMealRef.current.scrollIntoView({ behavior: "smooth" })
-    topRef && topRef.current.scrollIntoView({ behavior: "smooth" })
-  }
+    addMealRef && addMealRef.current.scrollIntoView({ behavior: "smooth" });
+    topRef && topRef.current.scrollIntoView({ behavior: "smooth" });
+  };
   //   finished
 
   return (
@@ -80,7 +80,7 @@ export default function MealsComp({
       <div className="main-component-form">
         <form>
           <label>
-            <span> Show:</span>
+            <span className="select-span"> Show:</span>
             <select value={showOption} onChange={handleShowChange}>
               <option value="all">All</option>
               <option value="upcoming">Upcoming</option>
@@ -91,7 +91,7 @@ export default function MealsComp({
 
         <form>
           <label>
-            <span> Sort by:</span>
+            <span className="select-span"> Sort by:</span>
             <select value={sortOption} onChange={handleSortChange}>
               <option value="latest">Latest created</option>
               <option value="oldest">Oldest created</option>
@@ -103,7 +103,7 @@ export default function MealsComp({
       </div>
       {!loading ? (
         <div className="meals">
-          {sort(newMeals).map(meal => (
+          {sort(newMeals).map((meal) => (
             <MealComp meal={meal} key={meal.id} reservations={reservations} />
           ))}
           <div
@@ -129,5 +129,5 @@ export default function MealsComp({
         </h3>
       </div>
     </section>
-  )
+  );
 }

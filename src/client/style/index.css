@@ -44,15 +44,11 @@ h1 {
 }
 
 .submit-btn {
-  background: #212b3d;
-  border-radius: 2px;
-  border-width: 0;
-  font-weight: 295;
-  color: white;
-  padding: 5px;
-  font-size: 16px;
-  width: 250px;
+  background: #c24067;
+  height: 52px;
+  width: 100%;
   align-self: center;
+  margin-top: 25px;
 }
 button:hover,
 .submit-btn:hover {
@@ -113,6 +109,14 @@ button:hover,
 }
 .know-more-upper {
   text-align: center;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+.search-container input {
+  max-width: 300px;
 }
 /* Arrow */
 .arrow-container {
@@ -227,13 +231,14 @@ button:hover,
   margin-top: 0;
 }
 form {
-  align-items: center;
-  text-align: center;
   margin: 15px;
   display: flex;
   flex-direction: column;
 }
-
+label {
+  padding-left: 5px;
+  margin-top: 20px;
+}
 .mealReservation {
   margin: 30px;
 }
@@ -266,24 +271,22 @@ input,
 textarea,
 .main-component select {
   color: white;
-  background: #212b3d;
+  background: #afafaf;
   border: none;
-  height: 25px;
-  border-radius: 2px;
 }
 
 input,
-textarea {
-  width: 250px;
+textarea,
+select {
+  width: 100%;
   margin: 5px;
+  padding: 10px;
+  border-radius: 15px;
 }
 textarea {
   height: 100px;
 }
-.submit-btn {
-  margin-top: 20px;
-  height: 30px;
-}
+
 .submit-btn:hover {
   cursor: pointer;
 }
@@ -308,6 +311,7 @@ textarea {
   font-weight: 295;
   padding: 5px;
   font-size: 16px;
+  border-radius: 100px;
 }
 .white-btn {
   color: black;

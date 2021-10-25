@@ -1,44 +1,44 @@
-import React, { useState, useRef } from "react"
-import { useForm } from "react-hook-form"
+import React, { useState, useRef } from "react";
+import { useForm } from "react-hook-form";
 
-const API_MEALS = `/api/meals`
-const API_SEARCH = "/api/search/"
+const API_MEALS = `/api/meals`;
+const API_SEARCH = "/api/search/";
 
 export default function SearchComp({
   meals,
   setMeals,
   loading,
   setResult,
-  inputRef
+  inputRef,
 }) {
-  const [inputId, setInputId] = useState()
+  const [inputId, setInputId] = useState();
   //   const inputRef = useRef()
-  const handleChange = e => {
-    setResult(true)
-    const data = e.target.value
-    let API_URL = API_SEARCH + data
-    if (!data) API_URL = API_MEALS
+  const handleChange = (e) => {
+    setResult(true);
+    const data = e.target.value;
+    let API_URL = API_SEARCH + data;
+    if (!data) API_URL = API_MEALS;
     fetch(API_URL)
-      .then(res => res.json())
-      .then(data => {
-        setMeals(data)
+      .then((res) => res.json())
+      .then((data) => {
+        setMeals(data);
         if (data.length === 0) {
-          setResult(false)
+          setResult(false);
         }
-      })
-  }
+      });
+  };
   const onInputClick = () => {
-    inputRef.current.scrollIntoView({ behavior: "smooth" })
-  }
+    inputRef.current.scrollIntoView({ behavior: "smooth" });
+  };
 
   const onSubmit = () => {
-    event.preventDefault()
-  }
+    event.preventDefault();
+  };
 
   return (
     <form
       onSubmit={onSubmit}
-      className="mealForm"
+      className="mealForm search-container "
       autoComplete="off"
       ref={inputRef}
     >
@@ -52,5 +52,5 @@ export default function SearchComp({
         required
       />
     </form>
-  )
+  );
 }

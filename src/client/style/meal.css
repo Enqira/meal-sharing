@@ -72,6 +72,9 @@
 .meal-info-lower p {
   margin: 5px;
 }
+.select-span {
+  padding-left: 10px;
+}
 @media (max-width: 650px) {
   .meal-container {
     flex-direction: column;

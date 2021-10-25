@@ -35,6 +35,11 @@ export default function HeaderComp({ topRef }) {
               The place where you can share your favorite dishes with others,
               and attend other people meal events.
             </p>
+            <div className="header-button-container">
+              <Link to={`/meals/`}>
+                <button className="btn header-button">Add meal</button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
