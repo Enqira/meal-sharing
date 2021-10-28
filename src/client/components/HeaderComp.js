@@ -32,7 +32,7 @@ export default function HeaderComp({ topRef }) {
           <div className="luminance-top">invita</div>
           <div className="luminance-bot">
             <p>
-              The place where you can share your favorite dishes with others,
+              The place where you can share your favourite dishes with others,
               and attend other people meal events.
             </p>
             <div className="header-button-container">
